@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Daily App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            color: #2d4a43;
+            background: linear-gradient(135deg, #f5f9f8 0%, #e8f2f0 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(85, 132, 122, 0.1);
+        }
+
+        .language-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .language-selector button {
+            background: linear-gradient(135deg, #55847A 0%, #467068 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            margin: 0 5px;
+            border-radius: 25px;
+            font-size: 0.95em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(85, 132, 122, 0.3);
+        }
+
+        .language-selector button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(85, 132, 122, 0.4);
+        }
+
+        .language-selector button.active {
+            background: #467068;
+            box-shadow: 0 2px 4px rgba(85, 132, 122, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #55847A;
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #55847A 0%, #467068 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(85, 132, 122, 0.3);
+        }
+
+        .app-icon svg {
+            width: 50px;
+            height: 50px;
+        }
+
+        h1 {
+            color: #55847A;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .app-name {
+            color: #467068;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+
+        .last-updated {
+            color: #666;
+            font-size: 0.95em;
+            margin-top: 10px;
+        }
+
+        h2 {
+            color: #55847A;
+            font-size: 1.8em;
+            margin: 40px 0 20px;
+            font-weight: 700;
+        }
+
+        h3 {
+            color: #467068;
+            font-size: 1.3em;
+            margin: 30px 0 15px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #3d5f56;
+        }
+
+        ul {
+            margin: 15px 0 15px 30px;
+            color: #3d5f56;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .highlight-box {
+            background: #e8f2f0;
+            border-left: 4px solid #55847A;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box strong {
+            color: #467068;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #55847A 0%, #467068 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .contact-section a {
+            color: #e8f2f0;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e8f2f0;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .design-credit {
+            background: #f5f9f8;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            text-align: center;
+            border: 2px solid #e8f2f0;
+        }
+
+        .design-credit a {
+            color: #55847A;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .design-credit a:hover {
+            text-decoration: underline;
+        }
+
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .language-selector {
+                position: relative;
+                top: 0;
+                right: 0;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="language-selector">
+        <button onclick="changeLanguage('en')" id="btn-en" class="active">🇺🇸 English</button>
+        <button onclick="changeLanguage('es')" id="btn-es">🇪🇸 Español</button>
+    </div>
+
+    <div class="container">
+        <!-- ENGLISH VERSION -->
+        <div id="content-en" class="lang-content active">
+            <div class="header">
+                <div class="app-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 11L12 14L22 4" stroke="white" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path
+                            d="M21 12V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16"
+                            stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <h1>Privacy Policy</h1>
+                <div class="app-name">Daily App</div>
+                <div class="last-updated">Last Updated: October 17, 2025</div>
+            </div>
+
+            <div class="highlight-box">
+                <strong>📱 Your Privacy Matters:</strong> Daily App is designed with privacy at its core. All your data
+                stays on your device. We do NOT collect, transmit, or store any of your personal information on external
+                servers.
+            </div>
+
+            <h2>1. Introduction</h2>
+            <p>Welcome to Daily App. This Privacy Policy explains how we handle your information when you use our mobile
+                application. Daily App is a local, offline task management application that respects your privacy by
+                design.</p>
+
+            <h2>2. Information We Collect</h2>
+            <h3>2.1 Data Stored Locally on Your Device</h3>
+            <p>Daily App stores the following information locally on your device using Room database:</p>
+            <ul>
+                <li><strong>User Credentials:</strong> Username and password (stored locally, encrypted)</li>
+                <li><strong>Task Data:</strong> Your to-do lists, task titles, descriptions, completion status, and
+                    creation dates</li>
+                <li><strong>User Preferences:</strong> App settings and preferences using SharedPreferences</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>🔒 Important:</strong> All this data is stored ONLY on your device. We never transmit, upload,
+                or sync this information to any external servers or cloud services.
+            </div>
+
+            <h3>2.2 Data We DO NOT Collect</h3>
+            <p>Daily App does NOT collect, access, or transmit:</p>
+            <ul>
+                <li>Personal identification information beyond what you create locally</li>
+                <li>Location data</li>
+                <li>Device information</li>
+                <li>Usage analytics or tracking data</li>
+                <li>Advertising identifiers</li>
+                <li>Network or browsing activity</li>
+                <li>Any data to third-party services</li>
+            </ul>
+
+            <h2>3. How We Use Your Information</h2>
+            <p>The information stored locally on your device is used solely for:</p>
+            <ul>
+                <li>Authenticating your access to the app</li>
+                <li>Storing and managing your daily tasks</li>
+                <li>Maintaining your app preferences and settings</li>
+                <li>Providing core functionality of the task management features</li>
+            </ul>
+
+            <h2>4. Data Storage and Security</h2>
+            <h3>4.1 Local Storage</h3>
+            <p>Daily App uses Android's Room database to securely store your data on your device. Your username and
+                password are stored locally with appropriate security measures. All data remains in your device's
+                private storage, inaccessible to other applications.</p>
+
+            <h3>4.2 No Cloud Sync</h3>
+            <p>Daily App does not include cloud synchronization features. Your data never leaves your device, which
+                means:</p>
+            <ul>
+                <li>✅ Maximum privacy - no one can access your data remotely</li>
+                <li>✅ No internet connection required for full functionality</li>
+                <li>⚠️ Data is not backed up automatically - if you uninstall the app or lose your device, your data
+                    will be lost</li>
+            </ul>
+
+            <h2>5. Third-Party Services</h2>
+            <h3>5.1 Lottie Animations</h3>
+            <p>Daily App uses Lottie animation files for enhanced user interface. These are locally bundled assets and
+                do not connect to external services or transmit any data.</p>
+
+            <h3>5.2 No Analytics or Advertising</h3>
+            <p>We do not use any third-party analytics services, advertising networks, or tracking tools. Your app usage
+                is completely private.</p>
+
+            <h2>6. Data Sharing and Disclosure</h2>
+            <p>Since Daily App stores all data locally and does not transmit any information, we do not share, sell,
+                rent, or disclose your data to any third parties. Period.</p>
+
+            <h2>7. Your Rights and Controls</h2>
+            <p>You have complete control over your data:</p>
+            <ul>
+                <li><strong>Access:</strong> All your data is stored locally and accessible only to you</li>
+                <li><strong>Modification:</strong> You can edit or delete any tasks or information within the app</li>
+                <li><strong>Deletion:</strong> Uninstalling the app will permanently delete all locally stored data</li>
+                <li><strong>Portability:</strong> Since data is not synced, there are no export features currently</li>
+            </ul>
+
+            <h2>8. Children's Privacy</h2>
+            <p>Daily App does not knowingly collect any information from children under 13 years of age. Since all data
+                is stored locally and we don't collect any information from users, the app can be used by anyone.
+                However, parental guidance is recommended for younger users.</p>
+
+            <h2>9. Technology Stack</h2>
+            <p>For transparency, Daily App is built using:</p>
+            <ul>
+                <li><strong>Room Database:</strong> For local data persistence</li>
+                <li><strong>Hilt:</strong> For dependency injection</li>
+                <li><strong>Use Cases:</strong> For clean architecture implementation</li>
+                <li><strong>SharedPreferences:</strong> For storing user preferences locally</li>
+                <li><strong>Lottie:</strong> For animations (local files only)</li>
+            </ul>
+
+            <div class="design-credit">
+                <p><strong>Design Credits:</strong></p>
+                <p>UI/UX design based on the Todo List App mockup created by <a
+                        href="https://www.figma.com/@designbyfisayo" target="_blank" rel="noopener">@designbyfisayo</a>
+                </p>
+                <p>Original design: <a href="https://www.figma.com/community/file/1142147813859745844/todo-list-app"
+                        target="_blank" rel="noopener">Figma Community</a></p>
+            </div>
+
+            <h2>10. Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time. Any changes will be posted within the app and on
+                this page. Continued use of Daily App after changes constitutes acceptance of the updated policy.</p>
+
+            <h2>11. Permissions</h2>
+            <p>Daily App requires minimal permissions:</p>
+            <ul>
+                <li><strong>Storage:</strong> Only to store your tasks and preferences locally on your device</li>
+                <li>No internet permissions required</li>
+                <li>No camera, location, or contacts access</li>
+            </ul>
+
+            <div class="contact-section">
+                <h2>📧 Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy or Daily App, please contact us at:</p>
+                <p><a href="mailto:oscardevmobille@gmail.comm">oscardevmobille@gmail.comm</a></p>
+                <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.9;">We aim to respond to all inquiries within
+                    48 hours.</p>
+            </div>
+
+            <div class="footer">
+                <p><strong>Daily App</strong> - A privacy-focused task management application</p>
+                <p>© 2025 Daily App. All rights reserved.</p>
+                <p style="margin-top: 10px; font-size: 0.85em;">This app operates entirely offline. Your data stays on
+                    your device, always.</p>
+            </div>
+        </div>
+
+        <!-- SPANISH VERSION -->
+        <div id="content-es" class="lang-content">
+            <div class="header">
+                <div class="app-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 11L12 14L22 4" stroke="white" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path
+                            d="M21 12V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16"
+                            stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <h1>Política de Privacidad</h1>
+                <div class="app-name">Daily App</div>
+                <div class="last-updated">Última Actualización: 17 de Octubre, 2025</div>
+            </div>
+
+            <div class="highlight-box">
+                <strong>📱 Tu Privacidad es Importante:</strong> Daily App está diseñada con la privacidad como
+                prioridad. Todos tus datos permanecen en tu dispositivo. NO recopilamos, transmitimos ni almacenamos
+                ninguna de tu información personal en servidores externos.
+            </div>
+
+            <h2>1. Introducción</h2>
+            <p>Bienvenido a Daily App. Esta Política de Privacidad explica cómo manejamos tu información cuando usas
+                nuestra aplicación móvil. Daily App es una aplicación local y sin conexión para la gestión de tareas que
+                respeta tu privacidad por diseño.</p>
+
+            <h2>2. Información que Recopilamos</h2>
+            <h3>2.1 Datos Almacenados Localmente en tu Dispositivo</h3>
+            <p>Daily App almacena la siguiente información localmente en tu dispositivo usando la base de datos Room:
+            </p>
+            <ul>
+                <li><strong>Credenciales de Usuario:</strong> Nombre de usuario y contraseña (almacenados localmente,
+                    encriptados)</li>
+                <li><strong>Datos de Tareas:</strong> Tus listas de tareas pendientes, títulos, descripciones, estado de
+                    finalización y fechas de creación</li>
+                <li><strong>Preferencias de Usuario:</strong> Configuraciones y preferencias de la app usando
+                    SharedPreferences</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>🔒 Importante:</strong> Todos estos datos se almacenan ÚNICAMENTE en tu dispositivo. Nunca
+                transmitimos, subimos o sincronizamos esta información a ningún servidor externo o servicio en la nube.
+            </div>
+
+            <h3>2.2 Datos que NO Recopilamos</h3>
+            <p>Daily App NO recopila, accede ni transmite:</p>
+            <ul>
+                <li>Información de identificación personal más allá de lo que creas localmente</li>
+                <li>Datos de ubicación</li>
+                <li>Información del dispositivo</li>
+                <li>Análisis de uso o datos de seguimiento</li>
+                <li>Identificadores publicitarios</li>
+                <li>Actividad de red o navegación</li>
+                <li>Ningún dato a servicios de terceros</li>
+            </ul>
+
+            <h2>3. Cómo Usamos tu Información</h2>
+            <p>La información almacenada localmente en tu dispositivo se usa únicamente para:</p>
+            <ul>
+                <li>Autenticar tu acceso a la aplicación</li>
+                <li>Almacenar y gestionar tus tareas diarias</li>
+                <li>Mantener tus preferencias y configuraciones de la app</li>
+                <li>Proporcionar la funcionalidad principal de las características de gestión de tareas</li>
+            </ul>
+
+            <h2>4. Almacenamiento y Seguridad de Datos</h2>
+            <h3>4.1 Almacenamiento Local</h3>
+            <p>Daily App utiliza la base de datos Room de Android para almacenar de forma segura tus datos en tu
+                dispositivo. Tu nombre de usuario y contraseña se almacenan localmente con las medidas de seguridad
+                apropiadas. Todos los datos permanecen en el almacenamiento privado de tu dispositivo, inaccesible para
+                otras aplicaciones.</p>
+
+            <h3>4.2 Sin Sincronización en la Nube</h3>
+            <p>Daily App no incluye funciones de sincronización en la nube. Tus datos nunca salen de tu dispositivo, lo
+                que significa:</p>
+            <ul>
+                <li>✅ Máxima privacidad - nadie puede acceder a tus datos remotamente</li>
+                <li>✅ No se requiere conexión a internet para la funcionalidad completa</li>
+                <li>⚠️ Los datos no se respaldan automáticamente - si desinstalas la app o pierdes tu dispositivo, tus
+                    datos se perderán</li>
+            </ul>
+
+            <h2>5. Servicios de Terceros</h2>
+            <h3>5.1 Animaciones Lottie</h3>
+            <p>Daily App utiliza archivos de animación Lottie para mejorar la interfaz de usuario. Estos son recursos
+                incluidos localmente y no se conectan a servicios externos ni transmiten ningún dato.</p>
+
+            <h3>5.2 Sin Análisis ni Publicidad</h3>
+            <p>No utilizamos ningún servicio de análisis de terceros, redes publicitarias ni herramientas de
+                seguimiento. El uso de tu aplicación es completamente privado.</p>
+
+            <h2>6. Compartir y Divulgación de Datos</h2>
+            <p>Dado que Daily App almacena todos los datos localmente y no transmite ninguna información, no
+                compartimos, vendemos, alquilamos ni divulgamos tus datos a terceros. Punto.</p>
+
+            <h2>7. Tus Derechos y Controles</h2>
+            <p>Tienes control completo sobre tus datos:</p>
+            <ul>
+                <li><strong>Acceso:</strong> Todos tus datos están almacenados localmente y son accesibles solo para ti
+                </li>
+                <li><strong>Modificación:</strong> Puedes editar o eliminar cualquier tarea o información dentro de la
+                    app</li>
+                <li><strong>Eliminación:</strong> Desinstalar la app eliminará permanentemente todos los datos
+                    almacenados localmente</li>
+                <li><strong>Portabilidad:</strong> Dado que los datos no se sincronizan, actualmente no hay funciones de
+                    exportación</li>
+            </ul>
+
+            <h2>8. Privacidad de los Niños</h2>
+            <p>Daily App no recopila conscientemente ninguna información de niños menores de 13 años. Dado que todos los
+                datos se almacenan localmente y no recopilamos ninguna información de los usuarios, la app puede ser
+                usada por cualquiera. Sin embargo, se recomienda la supervisión de los padres para usuarios más jóvenes.
+            </p>
+
+            <h2>9. Stack Tecnológico</h2>
+            <p>Por transparencia, Daily App está construida utilizando:</p>
+            <ul>
+                <li><strong>Room Database:</strong> Para la persistencia de datos locales</li>
+                <li><strong>Hilt:</strong> Para la inyección de dependencias</li>
+                <li><strong>Use Cases:</strong> Para la implementación de arquitectura limpia</li>
+                <li><strong>SharedPreferences:</strong> Para almacenar preferencias de usuario localmente</li>
+                <li><strong>Lottie:</strong> Para animaciones (solo archivos locales)</li>
+            </ul>
+
+            <div class="design-credit">
+                <p><strong>Créditos de Diseño:</strong></p>
+                <p>Diseño UI/UX basado en el mockup de Todo List App creado por <a
+                        href="https://www.figma.com/@designbyfisayo" target="_blank" rel="noopener">@designbyfisayo</a>
+                </p>
+                <p>Diseño original: <a href="https://www.figma.com/community/file/1142147813859745844/todo-list-app"
+                        target="_blank" rel="noopener">Figma Community</a></p>
+            </div>
+
+            <h2>10. Cambios a Esta Política de Privacidad</h2>
+            <p>Podemos actualizar esta Política de Privacidad de vez en cuando. Cualquier cambio se publicará dentro de
+                la app y en esta página. El uso continuado de Daily App después de los cambios constituye la aceptación
+                de la política actualizada.</p>
+
+            <h2>11. Permisos</h2>
+            <p>Daily App requiere permisos mínimos:</p>
+            <ul>
+                <li><strong>Almacenamiento:</strong> Solo para almacenar tus tareas y preferencias localmente en tu
+                    dispositivo</li>
+                <li>No se requieren permisos de internet</li>
+                <li>Sin acceso a cámara, ubicación o contactos</li>
+            </ul>
+
+            <div class="contact-section">
+                <h2>📧 Contáctanos</h2>
+                <p>Si tienes alguna pregunta sobre esta Política de Privacidad o Daily App, contáctanos en:</p>
+                <p><a href="mailto:oscardevmobille@gmail.comm">oscardevmobille@gmail.comm</a></p>
+                <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.9;">Nuestro objetivo es responder a todas las
+                    consultas en 48 horas.</p>
+            </div>
+
+            <div class="footer">
+                <p><strong>Daily App</strong> - Una aplicación de gestión de tareas enfocada en la privacidad</p>
+                <p>© 2025 Daily App. Todos los derechos reservados.</p>
+                <p style="margin-top: 10px; font-size: 0.85em;">Esta aplicación opera completamente sin conexión. Tus
+                    datos permanecen en tu dispositivo, siempre.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changeLanguage(lang) {
+            // Hide all content
+            document.querySelectorAll('.lang-content').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            // Show selected content
+            document.getElementById('content-' + lang).classList.add('active');
+
+            // Update buttons
+            document.querySelectorAll('.language-selector button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById('btn-' + lang).classList.add('active');
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Auto-detect language on load
+        window.addEventListener('DOMContentLoaded', function () {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            const browserLang = navigator.language || navigator.userLanguage;
+
+            if (savedLang) {
+                changeLanguage(savedLang);
+            } else if (browserLang.startsWith('es')) {
+                changeLanguage('es');
+            } else {
+                changeLanguage('en');
+            }
+        });
+    </script>
+</body>
+
+</html>
