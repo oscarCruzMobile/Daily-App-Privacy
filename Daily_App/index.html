@@ -69,6 +69,15 @@
             justify-content: center;
             box-shadow: 0 4px 15px rgba(85, 132, 122, 0.3);
         }
+        /* Icono para la app, simple 'D' de Daily */
+        .app-icon::before {
+            content: 'D'; 
+            font-size: 3.5em; 
+            font-weight: 900;
+            color: white;
+            line-height: 1;
+        }
+
         h1 {
             color: #55847A;
             font-size: 2.5em;
@@ -188,46 +197,35 @@
         <button onclick="changeLanguage('en')" id="btn-en" class="active">🇺🇸 English</button>
         <button onclick="changeLanguage('es')" id="btn-es">🇪🇸 Español</button>
     </div>
-
     <div class="container">
-        <!-- ENGLISH VERSION -->
         <div id="content-en" class="lang-content active">
             <div class="header">
                 <div class="app-icon">
-                    <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
-                    </svg>
-                </div>
+                    </div>
                 <h1>Privacy Policy</h1>
                 <div class="app-name">Daily App</div>
                 <div class="last-updated">Last Updated: November 13, 2025</div>
             </div>
-
             <div class="security-badge">
                 🔐 ADVANCED ENCRYPTION ENABLED - YOUR DATA IS PROTECTED
             </div>
-
             <div class="highlight-box">
-                <strong>📱 Your Privacy Matters:</strong> Daily App is designed with privacy and security at its core. All your data stays on your device and sensitive information is protected with advanced encryption using Android KeyStore. We do NOT collect, transmit, or store any of your personal information on external servers.
+                <strong>📱 Your Privacy Matters:</strong> Daily App is designed with **privacy and security** at its core. All your data stays **on your device** and sensitive information is protected with advanced encryption using **Android KeyStore**. We do NOT collect, transmit, or store any of your personal information on external servers.
             </div>
-
             <h2>1. Introduction</h2>
             <p>Welcome to Daily App. This Privacy Policy explains how we handle your information when you use our mobile application. Daily App is a local, offline task management application that respects your privacy by design and protects your sensitive data with industry-leading encryption technology.</p>
-
             <h2>2. Information We Collect</h2>
             <h3>2.1 Data Stored Locally on Your Device</h3>
-            <p>Daily App stores the following information locally on your device using Room database and encrypted DataStore:</p>
+            <p>Daily App stores the following information locally on your device using **Room database** and **encrypted DataStore**:</p>
             <ul>
-                <li><strong>User Credentials:</strong> Username and password (encrypted using AES/GCM encryption with Android KeyStore)</li>
-                <li><strong>Sensitive Task Data:</strong> Passwords and other sensitive fields stored in tasks are encrypted using AES/GCM</li>
-                <li><strong>Task Information:</strong> Your to-do lists, task titles, descriptions, completion status, and creation dates (stored locally)</li>
-                <li><strong>User Preferences:</strong> App settings and preferences (encrypted using Android's EncryptedDataStore)</li>
+                <li>**User Credentials:** Username and password (encrypted using AES/GCM encryption with Android KeyStore)</li>
+                <li>**Sensitive Task Data:** Passwords and other sensitive fields stored in tasks are encrypted using AES/GCM</li>
+                <li>**Task Information:** Your to-do lists, task titles, descriptions, completion status, and creation dates (stored locally)</li>
+                <li>**User Preferences:** App settings and preferences (encrypted using Android's EncryptedDataStore)</li>
             </ul>
-
             <div class="highlight-box">
-                <strong>🔒 Enhanced Security:</strong> Sensitive data is encrypted using AES/GCM/NoPadding encryption with 256-bit keys stored securely in Android KeyStore. This system-level security ensures your sensitive information is protected even if someone gains physical access to your phone. We never transmit, upload, or sync this information to any external servers or cloud services.
+                <strong>🔒 Enhanced Security:</strong> Sensitive data is encrypted using **AES/GCM/NoPadding** encryption with 256-bit keys stored securely in **Android KeyStore**. This system-level security ensures your sensitive information is protected even if someone gains physical access to your phone. **We never transmit, upload, or sync this information to any external servers or cloud services.**
             </div>
-
             <h3>2.2 Data We DO NOT Collect</h3>
             <p>Daily App does NOT collect, access, or transmit:</p>
             <ul>
@@ -239,7 +237,6 @@
                 <li>Network or browsing activity</li>
                 <li>Any data to third-party services</li>
             </ul>
-
             <h2>3. How We Use Your Information</h2>
             <p>The information stored locally on your device (with sensitive fields encrypted) is used solely for:</p>
             <ul>
@@ -248,152 +245,126 @@
                 <li>Maintaining your app preferences and settings</li>
                 <li>Providing core functionality of the task management features</li>
             </ul>
-
             <h2>4. Data Storage and Security</h2>
             <h3>4.1 Advanced Encryption Implementation</h3>
             <p>Daily App implements robust security measures for sensitive data:</p>
             <ul>
-                <li><strong>AES/GCM Encryption:</strong> Sensitive data (user credentials and sensitive task fields) is encrypted using AES algorithm in GCM mode with 256-bit keys</li>
-                <li><strong>Android KeyStore:</strong> Encryption keys are securely generated and stored in Android's hardware-backed KeyStore system, making them virtually impossible to extract</li>
-                <li><strong>Encrypted DataStore:</strong> User preferences are encrypted using Android's EncryptedDataStore with hardware-backed security</li>
-                <li><strong>Custom CryptoManager:</strong> Our implementation (package: com.oscarcruz.mydayliactivities.data.security) ensures proper encryption/decryption of sensitive fields</li>
-                <li><strong>GCM Mode:</strong> Uses Galois/Counter Mode for authenticated encryption, providing both confidentiality and data integrity</li>
+                <li>**AES/GCM Encryption:** Sensitive data (user credentials and sensitive task fields) is encrypted using AES algorithm in GCM mode with 256-bit keys</li>
+                <li>**Android KeyStore:** Encryption keys are securely generated and stored in Android's hardware-backed KeyStore system, making them virtually impossible to extract</li>
+                <li>**Encrypted DataStore:** User preferences are encrypted using Android's EncryptedDataStore with hardware-backed security</li>
+                <li>**Custom CryptoManager:** Our implementation (package: `com.oscarcruz.mydayliactivities.data.security`) ensures proper encryption/decryption of sensitive fields</li>
+                <li>**GCM Mode:** Uses Galois/Counter Mode for authenticated encryption, providing both confidentiality and data integrity</li>
             </ul>
-
             <h3>4.2 Local Storage Only</h3>
-            <p>Daily App uses Android's Room database to store your data locally on your device, with sensitive fields encrypted using our custom CryptoManager. All data remains in your device's private storage, inaccessible to other applications.</p>
-
+            <p>Daily App uses Android's **Room database** to store your data locally on your device, with sensitive fields encrypted using our custom CryptoManager. All data remains in your device's private storage, inaccessible to other applications.</p>
             <h3>4.3 No Cloud Sync</h3>
             <p>Daily App does not include cloud synchronization features. Your data never leaves your device, which means:</p>
             <ul>
-                <li>✅ Maximum privacy - no one can access your data remotely</li>
-                <li>✅ Hardware-backed encryption protects sensitive data even if device is compromised</li>
+                <li>✅ **Maximum privacy** - no one can access your data remotely</li>
+                <li>✅ **Hardware-backed encryption** protects sensitive data even if device is compromised</li>
                 <li>✅ No internet connection required for full functionality</li>
-                <li>⚠️ Data is not backed up automatically - if you uninstall the app or lose your device, your data will be lost</li>
+                <li>⚠️ **Data is not backed up automatically** - if you uninstall the app or lose your device, your data will be lost</li>
             </ul>
-
             <h2>5. Third-Party Services</h2>
             <h3>5.1 Lottie Animations</h3>
-            <p>Daily App uses Lottie animation files for enhanced user interface. These are locally bundled assets and do not connect to external services or transmit any data.</p>
-
+            <p>Daily App uses **Lottie animation files** for enhanced user interface. These are locally bundled assets and do not connect to external services or transmit any data.</p>
             <h3>5.2 No Analytics or Advertising</h3>
             <p>We do not use any third-party analytics services, advertising networks, or tracking tools. Your app usage is completely private and encrypted.</p>
-
             <h2>6. Data Sharing and Disclosure</h2>
             <p>Since Daily App stores all data locally with encryption for sensitive fields and does not transmit any information, we do not share, sell, rent, or disclose your data to any third parties. Period.</p>
-
             <h2>7. Your Rights and Controls</h2>
             <p>You have complete control over your data:</p>
             <ul>
-                <li><strong>Access:</strong> All your data is stored locally, with sensitive fields encrypted, and accessible only to you with your credentials</li>
-                <li><strong>Modification:</strong> You can edit or delete any tasks or information within the app</li>
-                <li><strong>Deletion:</strong> Uninstalling the app will permanently delete all locally stored data</li>
-                <li><strong>Security:</strong> Your sensitive data remains encrypted at rest and is protected by your device's security measures</li>
+                <li>**Access:** All your data is stored locally, with sensitive fields encrypted, and accessible only to you with your credentials</li>
+                <li>**Modification:** You can edit or delete any tasks or information within the app</li>
+                <li>**Deletion:** Uninstalling the app will **permanently delete** all locally stored data</li>
+                <li>**Security:** Your sensitive data remains encrypted at rest and is protected by your device's security measures</li>
             </ul>
-
             <h2>8. Children's Privacy</h2>
             <p>Daily App does not knowingly collect any information from children under 13 years of age. Since all data is stored locally with encryption for sensitive fields and we don't collect any information from users, the app can be used by anyone. However, parental guidance is recommended for younger users.</p>
-
             <h2>9. Technology Stack</h2>
             <p>For transparency, Daily App is built using:</p>
             <ul>
-                <li><strong>Room Database:</strong> For local data persistence</li>
-                <li><strong>Android EncryptedDataStore:</strong> For secure storage of user preferences</li>
-                <li><strong>Android KeyStore:</strong> For hardware-backed secure encryption key management</li>
-                <li><strong>Custom CryptoManager:</strong> Our encryption implementation in package com.oscarcruz.mydayliactivities.data.security</li>
-                <li><strong>Hilt:</strong> For dependency injection</li>
-                <li><strong>Clean Architecture with Use Cases:</strong> For maintainable and testable code</li>
-                <li><strong>Lottie:</strong> For animations (local files only)</li>
+                <li>**Room Database:** For local data persistence</li>
+                <li>**Android EncryptedDataStore:** For secure storage of user preferences</li>
+                <li>**Android KeyStore:** For hardware-backed secure encryption key management</li>
+                <li>**Custom CryptoManager:** Our encryption implementation in package `com.oscarcruz.mydayliactivities.data.security`</li>
+                <li>**Hilt:** For dependency injection</li>
+                <li>**Clean Architecture with Use Cases:** For maintainable and testable code</li>
+                <li>**Lottie:** For animations (local files only)</li>
             </ul>
-
             <h2>10. Encryption Standards</h2>
             <p>Daily App uses modern encryption standards:</p>
             <ul>
-                <li><strong>Algorithm:</strong> AES (Advanced Encryption Standard) in GCM mode</li>
-                <li><strong>Mode:</strong> GCM (Galois/Counter Mode) - provides authenticated encryption</li>
-                <li><strong>Key Size:</strong> 256-bit encryption keys</li>
-                <li><strong>Padding:</strong> None (GCM mode doesn't require padding)</li>
-                <li><strong>IV Generation:</strong> Randomized initialization vectors for each encryption operation</li>
-                <li><strong>Key Storage:</strong> Android KeyStore system with hardware-backed security when available</li>
-                <li><strong>DataStore Encryption:</strong> Android EncryptedSharedPreferences/EncryptedDataStore</li>
+                <li>**Algorithm:** AES (Advanced Encryption Standard) in GCM mode</li>
+                <li>**Mode:** GCM (Galois/Counter Mode) - provides authenticated encryption</li>
+                <li>**Key Size:** 256-bit encryption keys</li>
+                <li>**Padding:** None (GCM mode doesn't require padding)</li>
+                <li>**IV Generation:** Randomized initialization vectors for each encryption operation</li>
+                <li>**Key Storage:** Android KeyStore system with hardware-backed security when available</li>
+                <li>**DataStore Encryption:** Android EncryptedSharedPreferences/EncryptedDataStore</li>
             </ul>
-
             <h2>11. Changes to This Privacy Policy</h2>
             <p>We may update this Privacy Policy from time to time. Any changes will be posted within the app and on this page. Continued use of Daily App after changes constitutes acceptance of the updated policy.</p>
-
             <h2>12. Permissions</h2>
             <p>Daily App requires minimal permissions:</p>
             <ul>
-                <li><strong>Storage:</strong> Only to store your tasks and encrypted preferences locally on your device</li>
+                <li>**Storage:** Only to store your tasks and encrypted preferences locally on your device</li>
                 <li>No internet permissions required</li>
                 <li>No camera, location, or contacts access</li>
             </ul>
-
             <div class="contact-section">
                 <h2>📧 Contact Us</h2>
                 <p>If you have any questions about this Privacy Policy, our encryption practices, or Daily App, please contact us at:</p>
                 <p><a href="mailto:oscardevmobille@gmail.com">oscardevmobille@gmail.com</a></p>
                 <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.9;">We aim to respond to all inquiries within 48 hours.</p>
             </div>
-
             <div class="footer">
                 <p><strong>Daily App</strong> - A privacy-focused task management application with advanced encryption</p>
                 <p>© 2025 Daily App. All rights reserved.</p>
                 <p style="margin-top: 10px; font-size: 0.85em;">🔐 Sensitive data protected with AES/GCM encryption and Android KeyStore.</p>
-                <p style="margin-top: 8px; font-size: 0.8em;">🎨 UI Design inspired by <a href="https://www.figma.com/@designbyfisayo">Fisayo Omisade</a> - <a href="https://www.figma.com/community/file/1142147813859745844/todo-list-app">Todo List App</a> (Licensed under CC BY 4.0)</p>
+                <p style="margin-top: 8px; font-size: 0.8em;">🎨 **UI Design Inspiration:** Special thanks to <a href="https://www.figma.com/@designbyfisayo">Fisayo Omisade</a> for the Todo List App Figma mock-up used as inspiration: <a href="https://www.figma.com/community/file/1142147813859745844/todo-list-app">Todo List App</a> (Licensed under CC BY 4.0).</p>
             </div>
         </div>
-
-        <!-- SPANISH VERSION -->
         <div id="content-es" class="lang-content">
             <div class="header">
                 <div class="app-icon">
-                    <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
-                    </svg>
-                </div>
+                    </div>
                 <h1>Política de Privacidad</h1>
                 <div class="app-name">Daily App</div>
                 <div class="last-updated">Última Actualización: 13 de Noviembre, 2025</div>
             </div>
-
             <div class="security-badge">
                 🔐 CIFRADO AVANZADO ACTIVADO - TUS DATOS ESTÁN PROTEGIDOS
             </div>
-
             <div class="highlight-box">
-                <strong>📱 Tu Privacidad es Importante:</strong> Daily App está diseñada con privacidad y seguridad como prioridades. Todos tus datos permanecen en tu dispositivo y la información sensible está protegida con cifrado avanzado usando Android KeyStore. NO recopilamos, transmitimos ni almacenamos ninguna de tu información personal en servidores externos.
+                <strong>📱 Tu Privacidad es Importante:</strong> Daily App está diseñada con **privacidad y seguridad** como pilares fundamentales. Todos tus datos permanecen **en tu dispositivo** y la información sensible está protegida con cifrado avanzado usando **Android KeyStore**. NO recopilamos, transmitimos ni almacenamos ninguna de tu información personal en servidores externos.
             </div>
-
             <h2>1. Introducción</h2>
-            <p>Bienvenido a Daily App. Esta Política de Privacidad explica cómo manejamos tu información cuando usas nuestra aplicación móvil. Daily App es una aplicación local y sin conexión para la gestión de tareas que respeta tu privacidad por diseño y protege tus datos sensibles con tecnología de cifrado líder en la industria.</p>
-
+            <p>Bienvenido a Daily App. Esta Política de Privacidad explica cómo manejamos tu información cuando utilizas nuestra aplicación móvil. Daily App es una aplicación local y sin conexión para la gestión de tareas que respeta tu privacidad por diseño y protege tus datos sensibles con tecnología de cifrado líder en la industria.</p>
             <h2>2. Información que Recopilamos</h2>
             <h3>2.1 Datos Almacenados Localmente en tu Dispositivo</h3>
-            <p>Daily App almacena la siguiente información localmente en tu dispositivo usando base de datos Room y DataStore cifrado:</p>
+            <p>Daily App almacena la siguiente información localmente en tu dispositivo usando la **base de datos Room** y **DataStore cifrado**:</p>
             <ul>
-                <li><strong>Credenciales de Usuario:</strong> Nombre de usuario y contraseña (cifrados usando encriptación AES/GCM con Android KeyStore)</li>
-                <li><strong>Datos Sensibles de Tareas:</strong> Contraseñas y otros campos sensibles almacenados en tareas están cifrados usando AES/GCM</li>
-                <li><strong>Información de Tareas:</strong> Tus listas de tareas, títulos, descripciones, estado de finalización y fechas (almacenadas localmente)</li>
-                <li><strong>Preferencias de Usuario:</strong> Configuraciones y preferencias de la app (cifradas usando EncryptedDataStore de Android)</li>
+                <li>**Credenciales de Usuario:** Nombre de usuario y contraseña (cifrados usando encriptación AES/GCM con Android KeyStore)</li>
+                <li>**Datos Sensibles de Tareas:** Contraseñas y otros campos sensibles almacenados en tareas están cifrados usando AES/GCM</li>
+                <li>**Información de Tareas:** Tus listas de tareas, títulos, descripciones, estado de finalización y fechas de creación (almacenadas localmente)</li>
+                <li>**Preferencias de Usuario:** Configuraciones y preferencias de la app (cifradas usando EncryptedDataStore de Android)</li>
             </ul>
-
             <div class="highlight-box">
-                <strong>🔒 Seguridad Mejorada:</strong> Los datos sensibles están cifrados usando encriptación AES/GCM/NoPadding con claves de 256 bits almacenadas de forma segura en Android KeyStore. Esta seguridad a nivel de sistema garantiza que tu información sensible esté protegida incluso si alguien obtiene acceso físico a tu teléfono. Nunca transmitimos, subimos o sincronizamos esta información a ningún servidor externo o servicio en la nube.
+                <strong>🔒 Seguridad Mejorada:</strong> Los datos sensibles están cifrados usando encriptación **AES/GCM/NoPadding** con claves de 256 bits almacenadas de forma segura en **Android KeyStore**. Esta seguridad a nivel de sistema garantiza que tu información sensible esté protegida incluso si alguien obtiene acceso físico a tu teléfono. **Nunca transmitimos, subimos o sincronizamos esta información a ningún servidor externo o servicio en la nube.**
             </div>
-
             <h3>2.2 Datos que NO Recopilamos</h3>
             <p>Daily App NO recopila, accede ni transmite:</p>
             <ul>
                 <li>Información de identificación personal más allá de lo que creas localmente</li>
                 <li>Datos de ubicación</li>
                 <li>Información del dispositivo</li>
-                <li>Análisis de uso o datos de seguimiento</li>
+                <li>Análisis de uso o datos de seguimiento (analytics)</li>
                 <li>Identificadores publicitarios</li>
                 <li>Actividad de red o navegación</li>
                 <li>Ningún dato a servicios de terceros</li>
             </ul>
-
             <h2>3. Cómo Usamos tu Información</h2>
             <p>La información almacenada localmente en tu dispositivo (con campos sensibles cifrados) se usa únicamente para:</p>
             <ul>
@@ -402,89 +373,111 @@
                 <li>Mantener tus preferencias y configuraciones de la app</li>
                 <li>Proporcionar la funcionalidad principal de las características de gestión de tareas</li>
             </ul>
-
             <h2>4. Almacenamiento y Seguridad de Datos</h2>
             <h3>4.1 Implementación de Cifrado Avanzado</h3>
             <p>Daily App implementa medidas de seguridad robustas para datos sensibles:</p>
             <ul>
-                <li><strong>Cifrado AES/GCM:</strong> Los datos sensibles (credenciales de usuario y campos sensibles de tareas) están cifrados usando el algoritmo AES en modo GCM con claves de 256 bits</li>
-                <li><strong>Android KeyStore:</strong> Las claves de cifrado se generan y almacenan de forma segura en el sistema KeyStore de Android respaldado por hardware, haciéndolas virtualmente imposibles de extraer</li>
-                <li><strong>DataStore Cifrado:</strong> Las preferencias de usuario están cifradas usando EncryptedDataStore de Android con seguridad respaldada por hardware</li>
-                <li><strong>CryptoManager Personalizado:</strong> Nuestra implementación (paquete: com.oscarcruz.mydayliactivities.data.security) asegura el cifrado/descifrado adecuado de campos sensibles</li>
-                <li><strong>Modo GCM:</strong> Utiliza modo Galois/Counter para cifrado autenticado, proporcionando confidencialidad e integridad de datos</li>
+                <li>**Cifrado AES/GCM:** Los datos sensibles (credenciales de usuario y campos sensibles de tareas) están cifrados usando el algoritmo AES en modo GCM con claves de 256 bits</li>
+                <li>**Android KeyStore:** Las claves de cifrado se generan y almacenan de forma segura en el sistema KeyStore de Android respaldado por *hardware*, haciéndolas virtualmente imposibles de extraer</li>
+                <li>**DataStore Cifrado:** Las preferencias de usuario están cifradas usando EncryptedDataStore de Android con seguridad respaldada por *hardware*</li>
+                <li>**CryptoManager Personalizado:** Nuestra implementación (paquete: `com.oscarcruz.mydayliactivities.data.security`) asegura el cifrado/descifrado adecuado de campos sensibles</li>
+                <li>**Modo GCM:** Utiliza modo Galois/Counter para cifrado autenticado, proporcionando tanto confidencialidad como integridad de datos</li>
             </ul>
-
             <h3>4.2 Solo Almacenamiento Local</h3>
-            <p>Daily App utiliza la base de datos Room de Android para almacenar tus datos localmente en tu dispositivo, con campos sensibles cifrados usando nuestro CryptoManager personalizado. Todos los datos permanecen en el almacenamiento privado de tu dispositivo, inaccesibles para otras aplicaciones.</p>
-
+            <p>Daily App utiliza la **base de datos Room** de Android para almacenar tus datos localmente en tu dispositivo, con campos sensibles cifrados usando nuestro CryptoManager personalizado. Todos los datos permanecen en el almacenamiento privado de tu dispositivo, inaccesibles para otras aplicaciones.</p>
             <h3>4.3 Sin Sincronización en la Nube</h3>
             <p>Daily App no incluye funciones de sincronización en la nube. Tus datos nunca salen de tu dispositivo, lo que significa:</p>
             <ul>
-                <li>✅ Máxima privacidad - nadie puede acceder a tus datos remotamente</li>
-                <li>✅ Cifrado respaldado por hardware protege datos sensibles incluso si el dispositivo está comprometido</li>
+                <li>✅ **Máxima privacidad** - nadie puede acceder a tus datos remotamente</li>
+                <li>✅ **Cifrado respaldado por hardware** protege datos sensibles incluso si el dispositivo está comprometido</li>
                 <li>✅ No se requiere conexión a internet para la funcionalidad completa</li>
-                <li>⚠️ Los datos no se respaldan automáticamente - si desinstalas la app o pierdes tu dispositivo, tus datos se perderán</li>
+                <li>⚠️ **Los datos no se respaldan automáticamente** - si desinstalas la app o pierdes tu dispositivo, tus datos se perderán</li>
             </ul>
-
             <h2>5. Servicios de Terceros</h2>
             <h3>5.1 Animaciones Lottie</h3>
-            <p>Daily App utiliza archivos de animación Lottie para mejorar la interfaz de usuario. Estos son recursos incluidos localmente y no se conectan a servicios externos ni transmiten ningún dato.</p>
-
+            <p>Daily App utiliza archivos de animación **Lottie** para mejorar la interfaz de usuario. Estos son recursos incluidos localmente y no se conectan a servicios externos ni transmiten ningún dato.</p>
             <h3>5.2 Sin Análisis ni Publicidad</h3>
             <p>No utilizamos ningún servicio de análisis de terceros, redes publicitarias ni herramientas de seguimiento. El uso de tu aplicación es completamente privado y cifrado.</p>
-
             <h2>6. Compartir y Divulgación de Datos</h2>
-            <p>Dado que Daily App almacena todos los datos localmente con cifrado para campos sensibles y no transmite ninguna información, no compartimos, vendemos, alquilamos ni divulgamos tus datos a terceros. Punto.</p>
-
+            <p>Dado que Daily App almacena todos los datos localmente con cifrado para campos sensibles y no transmite ninguna información, **no compartimos, vendemos, alquilamos ni divulgamos tus datos a terceros. Punto.**</p>
             <h2>7. Tus Derechos y Controles</h2>
             <p>Tienes control completo sobre tus datos:</p>
             <ul>
-                <li><strong>Acceso:</strong> Todos tus datos están almacenados localmente, con campos sensibles cifrados, y accesibles solo para ti con tus credenciales</li>
-                <li><strong>Modificación:</strong> Puedes editar o eliminar cualquier tarea o información dentro de la app</li>
-                <li><strong>Eliminación:</strong> Desinstalar la app eliminará permanentemente todos los datos almacenados localmente</li>
-                <li><strong>Seguridad:</strong> Tus datos sensibles permanecen cifrados en reposo y están protegidos por las medidas de seguridad de tu dispositivo</li>
+                <li>**Acceso:** Todos tus datos están almacenados localmente, con campos sensibles cifrados, y accesibles solo para ti con tus credenciales</li>
+                <li>**Modificación:** Puedes editar o eliminar cualquier tarea o información dentro de la app</li>
+                <li>**Eliminación:** Desinstalar la app **eliminará permanentemente** todos los datos almacenados localmente</li>
+                <li>**Seguridad:** Tus datos sensibles permanecen cifrados en reposo y están protegidos por las medidas de seguridad de tu dispositivo</li>
             </ul>
-
             <h2>8. Privacidad de los Niños</h2>
             <p>Daily App no recopila conscientemente ninguna información de niños menores de 13 años. Dado que todos los datos se almacenan localmente con cifrado para campos sensibles y no recopilamos ninguna información de los usuarios, la app puede ser usada por cualquiera. Sin embargo, se recomienda la supervisión de los padres para usuarios más jóvenes.</p>
-
             <h2>9. Stack Tecnológico</h2>
             <p>Por transparencia, Daily App está construida utilizando:</p>
             <ul>
-                <li><strong>Room Database:</strong> Para persistencia de datos locales</li>
-                <li><strong>Android EncryptedDataStore:</strong> Para almacenamiento seguro de preferencias de usuario</li>
-                <li><strong>Android KeyStore:</strong> Para gestión segura de claves de cifrado respaldada por hardware</li>
-                <li><strong>CryptoManager Personalizado:</strong> Nuestra implementación de cifrado en el paquete com.oscarcruz.mydayliactivities.data.security</li>
-                <li><strong>Hilt:</strong> Para inyección de dependencias</li>
-                <li><strong>Arquitectura Limpia con Use Cases:</strong> Para código mantenible y testeable</li>
-                <li><strong>Lottie:</strong> Para animaciones (solo archivos locales)</li>
+                <li>**Room Database:** Para persistencia de datos locales</li>
+                <li>**Android EncryptedDataStore:** Para almacenamiento seguro de preferencias de usuario</li>
+                <li>**Android KeyStore:** Para gestión segura de claves de cifrado respaldada por *hardware*</li>
+                <li>**CryptoManager Personalizado:** Nuestra implementación de cifrado en el paquete `com.oscarcruz.mydayliactivities.data.security`</li>
+                <li>**Hilt:** Para inyección de dependencias</li>
+                <li>**Arquitectura Limpia con Use Cases:** Para código mantenible y testeable</li>
+                <li>**Lottie:** Para animaciones (solo archivos locales)</li>
             </ul>
-
             <h2>10. Estándares de Cifrado</h2>
             <p>Daily App usa estándares de cifrado modernos:</p>
             <ul>
-                <li><strong>Algoritmo:</strong> AES (Advanced Encryption Standard) en modo GCM</li>
-                <li><strong>Modo:</strong> GCM (Galois/Counter Mode) - proporciona cifrado autenticado</li>
-                <li><strong>Tamaño de Clave:</strong> Claves de cifrado de 256 bits</li>
-                <li><strong>Padding:</strong> Ninguno (el modo GCM no requiere padding)</li>
-                <li><strong>Generación de IV:</strong> Vectores de inicialización aleatorios para cada operación de cifrado</li>
-                <li><strong>Almacenamiento de Claves:</strong> Sistema Android KeyStore con seguridad respaldada por hardware cuando está disponible</li>
-                <li><strong>Cifrado de DataStore:</strong> Android EncryptedSharedPreferences/EncryptedDataStore</li>
+                <li>**Algoritmo:** AES (Advanced Encryption Standard) en modo GCM</li>
+                <li>**Mode:** GCM (Galois/Counter Mode) - proporciona cifrado autenticado</li>
+                <li>**Tamaño de Clave:** Claves de cifrado de 256 bits</li>
+                <li>**Padding:** Ninguno (el modo GCM no requiere padding)</li>
+                <li>**Generación de IV:** Vectores de inicialización aleatorios para cada operación de cifrado</li>
+                <li>**Almacenamiento de Claves:** Sistema Android KeyStore con seguridad respaldada por *hardware* cuando está disponible</li>
+                <li>**Cifrado de DataStore:** Android EncryptedSharedPreferences/EncryptedDataStore</li>
             </ul>
-
             <h2>11. Cambios a Esta Política de Privacidad</h2>
             <p>Podemos actualizar esta Política de Privacidad de vez en cuando. Cualquier cambio se publicará dentro de la app y en esta página. El uso continuado de Daily App después de los cambios constituye la aceptación de la política actualizada.</p>
-
             <h2>12. Permisos</h2>
             <p>Daily App requiere permisos mínimos:</p>
             <ul>
-                <li><strong>Almacenamiento:</strong> Solo para almacenar tus tareas y preferencias cifradas localmente en tu dispositivo</li>
+                <li>**Almacenamiento:** Solo para almacenar tus tareas y preferencias cifradas localmente en tu dispositivo</li>
                 <li>No se requieren permisos de internet</li>
                 <li>Sin acceso a cámara, ubicación o contactos</li>
             </ul>
-
             <div class="contact-section">
                 <h2>📧 Contáctanos</h2>
                 <p>Si tienes alguna pregunta sobre esta Política de Privacidad, nuestras prácticas de cifrado o Daily App, contáctanos en:</p>
                 <p><a href="mailto:oscardevmobille@gmail.com">oscardevmobille@gmail.com</a></p>
-                <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.9;">Nuestro objetivo es responder a todas las consultas en 48 h
+                <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.9;">Nuestro objetivo es responder a todas las consultas en 48 horas.</p>
+            </div>
+            <div class="footer">
+                <p><strong>Daily App</strong> - Una aplicación de gestión de tareas centrada en la privacidad con cifrado avanzado</p>
+                <p>© 2025 Daily App. Todos los derechos reservados.</p>
+                <p style="margin-top: 10px; font-size: 0.85em;">🔐 Datos sensibles protegidos con cifrado AES/GCM y Android KeyStore.</p>
+                <p style="margin-top: 8px; font-size: 0.8em;">🎨 **Inspiración de Diseño UI:** Agradecimiento especial a <a href="https://www.figma.com/@designbyfisayo">Fisayo Omisade</a> por el mock-up de Figma 'Todo List App' utilizado como inspiración: <a href="https://www.figma.com/community/file/1142147813859745844/todo-list-app">Todo List App</a> (Bajo Licencia CC BY 4.0).</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changeLanguage(lang) {
+            // Oculta todo el contenido
+            document.querySelectorAll('.lang-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            // Muestra el contenido solicitado
+            document.getElementById(`content-${lang}`).classList.add('active');
+
+            // Actualiza el estado activo de los botones
+            document.querySelectorAll('.language-selector button').forEach(button => {
+                button.classList.remove('active');
+            });
+            document.getElementById(`btn-${lang}`).classList.add('active');
+
+            // Actualiza el título del documento
+            if (lang === 'es') {
+                document.title = 'Política de Privacidad - Daily App';
+            } else {
+                document.title = 'Privacy Policy - Daily App';
+            }
+        }
+    </script>
+</body>
+</html>
