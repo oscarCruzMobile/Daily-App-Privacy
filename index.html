@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oscar Omar Cruz Bernal | Co-Founder & Mobile Developer</title>
+    <title>Oscar Omar Cruz Bernal | Co-Founder SBMS & Mobile Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -13,127 +13,116 @@
             --text-dim: #B0B0B0;
             --glass: rgba(255, 255, 255, 0.03);
             --border: rgba(255, 255, 255, 0.1);
+            --sbms-green: #4ade80;
         }
 
-        body {
-            font-family: 'Raleway', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        .hero {
-            padding: 80px 20px;
-            text-align: center;
-            background: radial-gradient(circle at top, rgba(123, 97, 255, 0.15) 0%, transparent 70%);
-        }
-
+        body { font-family: 'Raleway', sans-serif; background-color: var(--bg-color); color: var(--text-main); margin: 0; line-height: 1.6; }
+        .hero { padding: 80px 20px; text-align: center; background: radial-gradient(circle at top, rgba(123, 97, 255, 0.15) 0%, transparent 70%); }
         .hero h1 { font-size: 2.8rem; margin: 0; letter-spacing: -1px; }
         .hero p.tagline { color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-top: 10px; }
 
         .container { max-width: 1000px; margin: 0 auto; padding: 0 20px 100px; }
-
         .section-title { font-size: 1.1rem; text-transform: uppercase; color: var(--text-dim); letter-spacing: 3px; margin: 60px 0 30px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
 
-        /* Perfil Box */
-        .cv-box { background: var(--glass); border-radius: 24px; padding: 40px; border: 1px solid var(--border); }
-        .skills-container { display: flex; flex-wrap: wrap; gap: 10px; margin: 25px 0; }
+        /* SBMS & CV Box */
+        .highlight-box { background: var(--glass); border-radius: 24px; padding: 40px; border: 1px solid var(--border); margin-bottom: 30px; }
+        .skills-container { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
         .skill-tag { background: rgba(123, 97, 255, 0.1); border: 1px solid rgba(123, 97, 255, 0.3); color: #d1c9ff; padding: 6px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; }
 
-        /* Project Grid */
+        /* Services Grid */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
+        .service-item { background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid var(--border); font-size: 0.85rem; }
+        .service-item strong { color: var(--sbms-green); display: block; margin-bottom: 5px; }
+
+        /* Cards */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
-        .card { background: var(--glass); border: 1px solid var(--border); padding: 30px; border-radius: 20px; text-decoration: none; color: inherit; transition: all 0.3s ease; display: flex; flex-direction: column; }
-        .card:hover { border-color: var(--accent-color); background: rgba(123, 97, 255, 0.05); transform: translateY(-5px); }
-        .card h3 { margin: 0 0 10px; color: var(--accent-color); font-size: 1.4rem; }
-        .card p { font-size: 0.9rem; color: var(--text-dim); flex-grow: 1; }
-        .card-links { margin-top: 15px; display: flex; gap: 15px; font-size: 0.85rem; font-weight: bold; flex-wrap: wrap; }
-        .card-links a { color: var(--accent-color); text-decoration: none; }
-        .card-links a:hover { text-decoration: underline; }
+        .card { background: var(--glass); border: 1px solid var(--border); padding: 30px; border-radius: 20px; text-decoration: none; color: inherit; transition: all 0.3s ease; }
+        .card:hover { border-color: var(--accent-color); transform: translateY(-5px); }
+        .card h3 { margin: 0 0 10px; color: var(--accent-color); }
 
         /* Buttons */
         .btn-group { display: flex; gap: 15px; margin-top: 30px; flex-wrap: wrap; }
-        .btn { padding: 14px 28px; border-radius: 12px; font-weight: 700; text-decoration: none; font-size: 0.9rem; transition: 0.3s; display: inline-flex; align-items: center; gap: 10px; }
+        .btn { padding: 12px 24px; border-radius: 12px; font-weight: 700; text-decoration: none; font-size: 0.85rem; transition: 0.3s; display: inline-flex; align-items: center; gap: 8px; }
         .btn-primary { background: var(--accent-color); color: white; }
         .btn-outline { border: 2px solid var(--accent-color); color: var(--accent-color); }
-        .btn:hover { opacity: 0.85; transform: scale(1.02); }
+        .btn-sbms { border: 2px solid var(--sbms-green); color: var(--sbms-green); }
 
-        footer { text-align: center; padding: 80px 20px; color: var(--text-dim); font-size: 0.8rem; border-top: 1px solid var(--border); }
-        .social-links { margin-top: 20px; display: flex; justify-content: center; gap: 20px; }
-        .social-links a { color: var(--text-main); text-decoration: none; font-size: 1.1rem; transition: color 0.3s; }
-        .social-links a:hover { color: var(--accent-color); }
+        footer { text-align: center; padding: 60px 20px; color: var(--text-dim); font-size: 0.8rem; border-top: 1px solid var(--border); }
+        .social-links { margin-top: 15px; display: flex; justify-content: center; gap: 20px; }
+        .social-links a { color: var(--text-main); text-decoration: none; }
     </style>
 </head>
 <body>
 
-    <header class="hero">
-        <h1>Oscar Omar Cruz Bernal</h1>
-        <p class="tagline">Co-Founder of SBMS & Senior Mobile Developer</p>
-    </header>
+<header class="hero">
+    <h1>Oscar Omar Cruz Bernal</h1>
+    <p class="tagline">Co-Founder of SBMS & Senior Mobile Developer</p>
+</header>
 
-    <div class="container">
-        
-        <h2 class="section-title">Perfil Profesional</h2>
-        <div class="cv-box">
-            <p style="font-size: 1.15rem; margin-top: 0; font-weight: 300;">
-                Co-fundador de <strong>Software Business Machine Solutions (SBMS)</strong> y desarrollador con más de 7 años de experiencia. 
-                Especializado en aplicaciones nativas de alta seguridad, lideré proyectos críticos en <strong>Banamex</strong> como BancaNet Empresarial Mobile y módulos CoDi.
-            </p>
+<div class="container">
 
-            <div class="skills-container">
-                <span class="skill-tag">Kotlin & Compose</span>
-                <span class="skill-tag">Swift & iOS</span>
-                <span class="skill-tag">Clean Architecture</span>
-                <span class="skill-tag">Android KeyStore</span>
-                <span class="skill-tag">Cifrado AES/GCM</span>
-                <span class="skill-tag">Ionic & Angular</span>
-            </div>
 
-            <div class="btn-group">
-                <a href="CV-OscarOmarCruz.pdf" target="_blank" class="btn btn-outline">
-                    <span>👁️</span> Ver CV Completo
-                </a>
-                <a href="CV-OscarOmarCruz.pdf" download="CV_Oscar_Cruz.pdf" class="btn btn-primary">
-                    <span>📥</span> Descargar Currículum (PDF)
-                </a>
-                <a href="https://sbms-official.netlify.app/" target="_blank" class="btn btn-outline" style="border-color: #4ade80; color: #4ade80;">
-                    <span>🌐</span> Visitar SBMS
-                </a>
-            </div>
+    <h2 class="section-title">Experiencia Senior</h2>
+    <div class="highlight-box">
+        <p style="font-size: 1rem; margin: 0;">
+            Más de 7 años de trayectoria. Lideré el desarrollo de <strong>BancaNet Empresarial</strong> y módulos <strong>CoDi</strong> en Banamex. Especialista en seguridad móvil y arquitecturas Clean.
+        </p>
+        <div class="skills-container">
+            <span class="skill-tag">Kotlin & Compose</span><span class="skill-tag">Swift & iOS</span><span class="skill-tag">Android KeyStore</span><span class="skill-tag">AES/GCM Encryption</span>
         </div>
-
-        <h2 class="section-title">Proyectos & Apps</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Daily App</h3>
-                <p>Gestor de tareas offline con arquitectura Clean y cifrado de hardware AES/GCM de 256 bits. Máxima privacidad sin recolección de datos.</p>
-                <div class="card-links">
-                    <a href="https://play.google.com/store/apps/details?id=com.oscarcruz.mydayliactivities" target="_blank">Google Play Store &rarr;</a>
-                    <a href="./Daily_App/index.html">Privacidad &rarr;</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3>Walk App</h3>
-                <p>Aplicación nativa para el seguimiento de rutas y actividad física, optimizada para rendimiento y persistencia local de datos.</p>
-                <div class="card-links">
-                    <span style="color: var(--text-dim);">Próximamente en Store</span>
-                    <a href="./Walk_App/index.html">Privacidad &rarr;</a>
-                </div>
-            </div>
+        <div class="btn-group">
+            <a href="CV-OscarOmarCruz.pdf" target="_blank" class="btn btn-outline">👁️ Ver CV</a>
+            <a href="CV-OscarOmarCruz.pdf" download="CV_Oscar_Cruz.pdf" class="btn btn-primary">📥 Descargar PDF</a>
         </div>
-
     </div>
 
-    <footer>
-        &copy; 2026 Oscar Omar Cruz Bernal | Software Business Machine Solutions (SBMS)
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/oscar-omar-cruz-bernal-008643164" target="_blank">LinkedIn</a>
-            <a href="https://www.facebook.com/profile.php?id=61586424358142" target="_blank">Facebook</a>
-            <a href="https://www.instagram.com/softwarebusinessmachinesolutio/" target="_blank">Instagram</a>
+      <h2 class="section-title">Software Business Machine Solutions</h2>
+    <div class="highlight-box">
+        <p style="font-size: 1.1rem; margin-top: 0;">
+            Construimos la próxima generación de soluciones digitales: software robusto, seguro y altamente escalable para el negocio moderno.
+        </p>
+        <div class="services-grid">
+            <div class="service-item"><strong>Webs de Conversión</strong> Sitios estratégicos para amplificar tu marca.</div>
+            <div class="service-item"><strong>Sistemas ERP/CRM</strong> Control total de tus flujos de trabajo.</div>
+            <div class="service-item"><strong>Apps Móviles</strong> Alto rendimiento en iOS y Android.</div>
+            <div class="service-item"><strong>Software Custom</strong> Soluciones para desafíos únicos.</div>
         </div>
-        <p style="margin-top: 20px;">oscarcztec@gmail.com</p>
-    </footer>
+        <div class="btn-group">
+            <a href="https://sbms-official.netlify.app/" target="_blank" class="btn btn-sbms">🌐 Visitar SBMS</a>
+            <a href="https://sbms-official.netlify.app/" target="_blank" class="btn btn-outline" style="border-color: var(--text-dim); color: var(--text-dim);">Agenda una Consultoría</a>
+        </div>
+    </div>
+
+    <h2 class="section-title">Proyectos & Privacidad</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Daily App</h3>
+            <p>Gestor de tareas offline con cifrado de hardware AES/GCM. Privacidad total.</p>
+            <div style="font-size: 0.8rem; font-weight: bold;">
+                <a href="https://play.google.com/store/apps/details?id=com.oscarcruz.mydayliactivities" target="_blank" style="color:var(--accent-color); text-decoration:none;">Play Store &rarr;</a> | 
+                <a href="./Daily_App/index.html" style="color:var(--text-dim); text-decoration:none;">Privacidad</a>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Walk App</h3>
+            <p>Seguimiento de rutas nativo enfocado en rendimiento y persistencia local.</p>
+            <div style="font-size: 0.8rem; font-weight: bold;">
+                <span style="color: var(--text-dim);">Próximamente</span> | 
+                <a href="./Walk_App/index.html" style="color:var(--text-dim); text-decoration:none;">Privacidad</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    &copy; 2026 Oscar Omar Cruz Bernal | SBMS
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/oscar-omar-cruz-bernal-008643164" target="_blank">LinkedIn</a>
+        <a href="https://www.facebook.com/profile.php?id=61586424358142" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/softwarebusinessmachinesolutio/" target="_blank">Instagram</a>
+    </div>
+</footer>
 
 </body>
 </html>
