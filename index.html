@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oscar Omar Cruz Bernal | Senior Mobile Developer</title>
+    <title>Oscar Omar Cruz Bernal | Co-Founder & Mobile Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -47,7 +47,7 @@
         .card:hover { border-color: var(--accent-color); background: rgba(123, 97, 255, 0.05); transform: translateY(-5px); }
         .card h3 { margin: 0 0 10px; color: var(--accent-color); font-size: 1.4rem; }
         .card p { font-size: 0.9rem; color: var(--text-dim); flex-grow: 1; }
-        .card-links { margin-top: 15px; display: flex; gap: 15px; font-size: 0.85rem; font-weight: bold; }
+        .card-links { margin-top: 15px; display: flex; gap: 15px; font-size: 0.85rem; font-weight: bold; flex-wrap: wrap; }
         .card-links a { color: var(--accent-color); text-decoration: none; }
         .card-links a:hover { text-decoration: underline; }
 
@@ -59,13 +59,16 @@
         .btn:hover { opacity: 0.85; transform: scale(1.02); }
 
         footer { text-align: center; padding: 80px 20px; color: var(--text-dim); font-size: 0.8rem; border-top: 1px solid var(--border); }
+        .social-links { margin-top: 20px; display: flex; justify-content: center; gap: 20px; }
+        .social-links a { color: var(--text-main); text-decoration: none; font-size: 1.1rem; transition: color 0.3s; }
+        .social-links a:hover { color: var(--accent-color); }
     </style>
 </head>
 <body>
 
     <header class="hero">
         <h1>Oscar Omar Cruz Bernal</h1>
-        <p class="tagline">Mobile App Developer</p>
+        <p class="tagline">Co-Founder of SBMS & Senior Mobile Developer</p>
     </header>
 
     <div class="container">
@@ -73,8 +76,8 @@
         <h2 class="section-title">Perfil Profesional</h2>
         <div class="cv-box">
             <p style="font-size: 1.15rem; margin-top: 0; font-weight: 300;">
-                Desarrollador con más de 7 años de experiencia, especializado en la creación de aplicaciones nativas seguras. 
-                Lideré el desarrollo de **BancaNet Empresarial Mobile** para Banamex , implementando módulos críticos de CoDi y sistemas de cifrado avanzado.
+                Co-fundador de <strong>Software Business Machine Solutions (SBMS)</strong> y desarrollador con más de 7 años de experiencia. 
+                Especializado en aplicaciones nativas de alta seguridad, lideré proyectos críticos en <strong>Banamex</strong> como BancaNet Empresarial Mobile y módulos CoDi.
             </p>
 
             <div class="skills-container">
@@ -93,14 +96,17 @@
                 <a href="CV-OscarOmarCruz.pdf" download="CV_Oscar_Cruz.pdf" class="btn btn-primary">
                     <span>📥</span> Descargar Currículum (PDF)
                 </a>
+                <a href="https://sbms-official.netlify.app/" target="_blank" class="btn btn-outline" style="border-color: #4ade80; color: #4ade80;">
+                    <span>🌐</span> Visitar SBMS
+                </a>
             </div>
         </div>
 
-        <h2 class="section-title">Proyectos Desplegados</h2>
+        <h2 class="section-title">Proyectos & Apps</h2>
         <div class="grid">
             <div class="card">
                 <h3>Daily App</h3>
-                <p>Gestor de tareas offline con arquitectura Clean y cifrado de hardware AES/GCM de 256 bits. Diseñado para privacidad total sin recolección de datos. [cite: 58, 63, 68]</p>
+                <p>Gestor de tareas offline con arquitectura Clean y cifrado de hardware AES/GCM de 256 bits. Máxima privacidad sin recolección de datos.</p>
                 <div class="card-links">
                     <a href="https://play.google.com/store/apps/details?id=com.oscarcruz.mydayliactivities" target="_blank">Google Play Store &rarr;</a>
                     <a href="./Daily_App/index.html">Privacidad &rarr;</a>
@@ -109,7 +115,7 @@
 
             <div class="card">
                 <h3>Walk App</h3>
-                <p>Aplicación nativa para el seguimiento de rutas y actividad física, enfocada en el rendimiento y la persistencia de datos local.</p>
+                <p>Aplicación nativa para el seguimiento de rutas y actividad física, optimizada para rendimiento y persistencia local de datos.</p>
                 <div class="card-links">
                     <span style="color: var(--text-dim);">Próximamente en Store</span>
                     <a href="./Walk_App/index.html">Privacidad &rarr;</a>
@@ -121,8 +127,12 @@
 
     <footer>
         &copy; 2026 Oscar Omar Cruz Bernal | Software Business Machine Solutions (SBMS)
-        <br><br>
-        <a href="https://www.linkedin.com/in/oscar-omar-cruz-bernal-008643164" target="_blank" style="color: var(--accent-color); text-decoration: none;">LinkedIn</a> • oscarcztec@gmail.com
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/oscar-omar-cruz-bernal-008643164" target="_blank">LinkedIn</a>
+            <a href="https://www.facebook.com/profile.php?id=61586424358142" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/softwarebusinessmachinesolutio/" target="_blank">Instagram</a>
+        </div>
+        <p style="margin-top: 20px;">oscarcztec@gmail.com</p>
     </footer>
 
 </body>
