@@ -1,11 +1,119 @@
 <!DOCTYPE html>
-<html>
-<head><title>SBMS Privacy Policies</title></head>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oscar Omar Cruz Bernal | Senior Mobile Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #28333F; 
+            --accent-color: #7B61FF;
+            --text-main: #FFFFFF;
+            --text-dim: #B0B0B0;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .hero {
+            padding: 80px 20px;
+            text-align: center;
+            background: radial-gradient(circle at top, rgba(123, 97, 255, 0.15) 0%, transparent 70%);
+        }
+
+        .hero h1 { font-size: 2.8rem; margin: 0; letter-spacing: -1px; }
+        .hero p.tagline { color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-top: 10px; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px 100px; }
+
+        .section-title { font-size: 1.2rem; text-transform: uppercase; color: var(--text-dim); letter-spacing: 3px; margin: 60px 0 30px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+
+        /* App Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+        .card { background: var(--glass); border: 1px solid var(--border); padding: 30px; border-radius: 20px; text-decoration: none; color: inherit; transition: all 0.3s ease; }
+        .card:hover { border-color: var(--accent-color); background: rgba(123, 97, 255, 0.05); transform: translateY(-5px); }
+        .card h3 { margin: 0 0 10px; color: var(--accent-color); font-size: 1.5rem; }
+        .card p { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 20px; }
+
+        /* CV Highlights */
+        .cv-box { background: var(--glass); border-radius: 20px; padding: 40px; border: 1px solid var(--border); }
+        .skills-container { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+        .skill-tag { background: rgba(123, 97, 255, 0.1); border: 1px solid rgba(123, 97, 255, 0.3); color: #d1c9ff; padding: 6px 15px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; }
+
+        /* Buttons */
+        .btn-group { display: flex; gap: 15px; margin-top: 30px; }
+        .btn { padding: 14px 28px; border-radius: 12px; font-weight: 700; text-decoration: none; font-size: 0.9rem; transition: 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-primary { background: var(--accent-color); color: white; }
+        .btn-outline { border: 2px solid var(--accent-color); color: var(--accent-color); }
+        .btn:hover { opacity: 0.85; transform: scale(1.02); }
+
+        footer { text-align: center; padding: 60px; color: var(--text-dim); font-size: 0.8rem; border-top: 1px solid var(--border); }
+    </style>
+</head>
 <body>
-    <h1>Políticas de Privacidad</h1>
-    <ul>
-        <li><a href="./Daily_App/index.html">Daily App</a></li>
-        <li><a href="./Walk_App/index.html">Walk App</a></li>
-    </ul>
+
+    <header class="hero">
+        <h1>Oscar Omar Cruz Bernal</h1>
+        <p class="tagline">Mobile App Developer</p>
+    </header>
+
+    <div class="container">
+        
+        <h2 class="section-title">Políticas de Privacidad</h2>
+        <div class="grid">
+            <a href="./Daily_App/index.html" class="card">
+                <h3>Daily App</h3>
+                <p>Gestor de tareas offline con arquitectura Clean y cifrado de hardware AES/GCM de 256 bits.</p>
+                <div style="font-weight: bold; color: var(--accent-color);">Ver Documentación &rarr;</div>
+            </a>
+            <a href="./Walk_App/index.html" class="card">
+                <h3>Walk App</h3>
+                <p>Seguimiento de rutas y métricas de actividad física optimizado para privacidad y rendimiento.</p>
+                <div style="font-weight: bold; color: var(--accent-color);">Ver Documentación &rarr;</div>
+            </a>
+        </div>
+
+        <h2 class="section-title">Perfil Profesional</h2>
+        <div class="cv-box">
+            <p style="font-size: 1.1rem; margin-top: 0;">
+                Desarrollador con **más de 7 años de experiencia**  especializado en la creación de aplicaciones nativas de alta seguridad para sectores financieros y de movilidad[cite: 5, 45]. 
+                Lideré proyectos críticos como **CoDi Next-Gen** y el rebranding de **BancaNet Empresarial** para Banamex[cite: 30, 38, 40].
+            </p>
+
+            <div class="skills-container">
+                <span class="skill-tag">Kotlin & Jetpack Compose</span>
+                <span class="skill-tag">Swift & Xcode</span>
+                <span class="skill-tag">Android KeyStore</span>
+                <span class="skill-tag">Clean Architecture</span>
+                <span class="skill-tag">AES/GCM Encryption</span>
+                <span class="skill-tag">Ionic & Angular</span>
+            </div>
+
+            <div class="btn-group">
+                <a href="CV-OscarOmarCruz.pdf" target="_blank" class="btn btn-outline">
+                    <span>👁️</span> Ver CV Completo
+                </a>
+                <a href="CV-OscarOmarCruz.pdf" download="CV_Oscar_Cruz.pdf" class="btn btn-primary">
+                    <span>📥</span> Descargar PDF
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 Oscar Omar Cruz Bernal | Software Business Machine Solutions (SBMS) [cite: 1]
+        <br><br>
+        <a href="https://www.linkedin.com/in/oscar-omar-cruz-bernal-008643164" style="color: var(--accent-color); text-decoration: none;">LinkedIn</a> • oscarcztec@gmail.com [cite: 89, 90]
+    </footer>
+
 </body>
 </html>
