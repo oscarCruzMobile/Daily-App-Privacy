@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Walk App</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            color: #e0dff5;
+            background: linear-gradient(160deg, #1a1f35 0%, #252040 50%, #2a1f4a 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(30, 27, 58, 0.95);
+            padding: 50px;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(91, 79, 217, 0.25), 0 0 0 1px rgba(107, 92, 231, 0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        /* ── Language selector ── */
+        .language-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .language-selector button {
+            background: linear-gradient(135deg, #6C5CE7 0%, #5B4FD9 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            margin: 0 5px;
+            border-radius: 25px;
+            font-size: 0.95em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+        }
+        .language-selector button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(108, 92, 231, 0.5);
+        }
+        .language-selector button.active {
+            background: #4A3FC4;
+            box-shadow: 0 2px 8px rgba(108, 92, 231, 0.3);
+        }
+
+        /* ── Header ── */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(108, 92, 231, 0.4);
+        }
+        .app-icon {
+            width: 88px;
+            height: 88px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #6C5CE7 0%, #5B4FD9 100%);
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(108, 92, 231, 0.45);
+            font-size: 2.6em;
+        }
+        h1 {
+            color: #ffffff;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .app-name {
+            color: #9d8ffa;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+        .last-updated {
+            color: #6b6a8a;
+            font-size: 0.95em;
+            margin-top: 10px;
+        }
+
+        /* ── Typography ── */
+        h2 {
+            color: #b8aaff;
+            font-size: 1.6em;
+            margin: 40px 0 16px;
+            font-weight: 700;
+        }
+        h3 {
+            color: #9d8ffa;
+            font-size: 1.2em;
+            margin: 28px 0 12px;
+            font-weight: 600;
+        }
+        p {
+            margin-bottom: 14px;
+            color: #c5c2e0;
+        }
+        ul {
+            margin: 12px 0 12px 28px;
+            color: #c5c2e0;
+        }
+        li { margin: 9px 0; }
+        strong { color: #dbd7f8; }
+
+        /* ── Boxes ── */
+        .highlight-box {
+            background: rgba(108, 92, 231, 0.12);
+            border-left: 4px solid #6C5CE7;
+            padding: 20px 22px;
+            margin: 25px 0;
+            border-radius: 10px;
+            color: #c5c2e0;
+        }
+        .highlight-box strong { color: #b8aaff; }
+
+        .security-badge {
+            background: linear-gradient(135deg, #5B4FD9 0%, #7B6CF6 100%);
+            color: white;
+            padding: 16px 22px;
+            border-radius: 12px;
+            margin: 25px 0;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1em;
+            letter-spacing: 0.5px;
+            box-shadow: 0 6px 20px rgba(91, 79, 217, 0.35);
+        }
+
+        /* ── Contact ── */
+        .contact-section {
+            background: linear-gradient(135deg, #5B4FD9 0%, #6C5CE7 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 18px;
+            margin-top: 40px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(91, 79, 217, 0.35);
+        }
+        .contact-section h2 { color: white; margin-top: 0; }
+        .contact-section p { color: rgba(255,255,255,0.9); }
+        .contact-section a { color: #cec8ff; text-decoration: none; font-weight: 600; }
+
+        /* ── Footer ── */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(108, 92, 231, 0.25);
+            color: #6b6a8a;
+            font-size: 0.9em;
+        }
+        .footer a { color: #9d8ffa; text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+
+        /* ── Language toggle ── */
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .container { padding: 28px 18px; }
+            h1 { font-size: 2em; }
+            .language-selector { position: relative; top: 0; right: 0; text-align: center; margin-bottom: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="language-selector">
+    <button onclick="changeLanguage('es')" id="btn-es" class="active">🇲🇽 Español</button>
+    <button onclick="changeLanguage('en')" id="btn-en">🇺🇸 English</button>
+</div>
+
+<div class="container">
+
+    <!-- ══════════════════════════════════════════════════
+         ESPAÑOL
+    ══════════════════════════════════════════════════ -->
+    <div id="content-es" class="lang-content active">
+        <div class="header">
+            <div class="app-icon">🚶</div>
+            <h1>Política de Privacidad</h1>
+            <div class="app-name">Walk App</div>
+            <div class="last-updated">Última actualización: Marzo 2026</div>
+        </div>
+
+        <div class="security-badge">
+            📍 SEGUIMIENTO GPS ACTIVO — TUS DATOS SE GUARDAN SOLO EN TU DISPOSITIVO
+        </div>
+
+        <div class="highlight-box">
+            <strong>📱 Tu Privacidad es lo Primero:</strong> Walk App está diseñada para registrar tus rutas de caminata sin comprometer tu privacidad. Todos tus datos de ubicación, rutas e historial se almacenan <strong>exclusivamente en tu dispositivo</strong>. No contamos con servidores propios ni enviamos tu información a terceros.
+        </div>
+
+        <h2>1. Introducción</h2>
+        <p>Bienvenido a Walk App. Esta Política de Privacidad explica qué información recopilamos, cómo la utilizamos y cómo la protegemos cuando usas nuestra aplicación de seguimiento de caminata para Android.</p>
+        <p>Al usar Walk App, aceptas los términos descritos en este documento. Si no estás de acuerdo, te pedimos que no uses la aplicación.</p>
+
+        <h2>2. Información que Recopilamos</h2>
+
+        <h3>2.1 Datos de Ubicación GPS</h3>
+        <p>Walk App accede a tu ubicación para registrar tus rutas. Recopilamos:</p>
+        <ul>
+            <li>Coordenadas GPS (latitud y longitud) en tiempo real</li>
+            <li>Altitud y velocidad de desplazamiento</li>
+            <li>Precisión de la señal GPS</li>
+            <li>Marca de tiempo de cada punto registrado</li>
+        </ul>
+        <div class="highlight-box">
+            <strong>📌 Ubicación en Segundo Plano:</strong> La app solicita acceso a tu ubicación incluso cuando la pantalla está apagada o la app está minimizada. Esto es necesario para registrar tu ruta completa sin interrupciones durante toda la caminata.
+        </div>
+
+        <h3>2.2 Datos de Actividad Física</h3>
+        <p>Durante cada sesión registramos:</p>
+        <ul>
+            <li>Distancia total recorrida</li>
+            <li>Duración de la actividad</li>
+            <li>Ruta completa (trayectoria GPS)</li>
+            <li>Historial de sesiones anteriores</li>
+        </ul>
+
+        <h3>2.3 Datos del Dispositivo</h3>
+        <ul>
+            <li>Estado de la red (para descarga de mapas offline con OSMDroid)</li>
+            <li>Estado del GPS y disponibilidad de proveedores de ubicación</li>
+            <li>Identificadores técnicos para el servicio en segundo plano</li>
+        </ul>
+
+        <h3>2.4 Preferencias del Usuario</h3>
+        <p>Almacenamos localmente tus configuraciones y el estado de las sesiones activas mediante Android DataStore.</p>
+
+        <h2>3. Cómo Usamos tu Información</h2>
+        <p>Utilizamos los datos exclusivamente para:</p>
+        <ul>
+            <li>Registrar y mostrar tus rutas de caminata en el mapa</li>
+            <li>Calcular distancia, velocidad y estadísticas de tus actividades</li>
+            <li>Guardar el historial de sesiones para que puedas consultarlas</li>
+            <li>Reanudar el seguimiento automáticamente si el sistema interrumpe el servicio</li>
+            <li>Mostrarte notificaciones del estado del seguimiento en tiempo real</li>
+        </ul>
+
+        <h2>4. Almacenamiento y Seguridad</h2>
+
+        <h3>4.1 Almacenamiento 100% Local</h3>
+        <p>Todos tus datos de actividad se almacenan <strong>exclusivamente en tu dispositivo</strong> mediante una base de datos local (Room/SQLite). Walk App no cuenta con servidores propios ni envía tus datos de ubicación o actividad física a ningún servidor externo.</p>
+
+        <h3>4.2 Mapas Offline (OSMDroid)</h3>
+        <p>Walk App usa OSMDroid para mostrar mapas. Los fragmentos del mapa (tiles) se descargan de los servidores de OpenStreetMap y se almacenan en caché en tu dispositivo. Esta descarga no incluye tus datos personales ni tu ubicación. Consulta la política de privacidad de OpenStreetMap en openstreetmap.org/privacy.</p>
+
+        <h3>4.3 Seguridad del Dispositivo</h3>
+        <p>Dado que todos los datos se almacenan localmente, recomendamos mantener tu dispositivo protegido con contraseña, PIN o huella dactilar.</p>
+
+        <div class="highlight-box">
+            <strong>✅ Sin servidores, sin nube, sin terceros:</strong> La única comunicación de red es la descarga de tiles del mapa desde OpenStreetMap, que no incluye ningún dato tuyo.
+        </div>
+
+        <h2>5. Permisos del Sistema Android</h2>
+        <p>Walk App solicita los siguientes permisos:</p>
+        <ul>
+            <li><strong>ACCESS_FINE_LOCATION / ACCESS_COARSE_LOCATION:</strong> Para determinar tu ubicación con precisión GPS durante la caminata</li>
+            <li><strong>ACCESS_BACKGROUND_LOCATION:</strong> Para continuar registrando tu ruta con la pantalla apagada o la app en segundo plano</li>
+            <li><strong>FOREGROUND_SERVICE / FOREGROUND_SERVICE_LOCATION:</strong> Para mantener el servicio de rastreo activo con notificación visible</li>
+            <li><strong>WAKE_LOCK:</strong> Para evitar que el procesador se suspenda y se pierdan puntos GPS</li>
+            <li><strong>INTERNET / ACCESS_NETWORK_STATE:</strong> Para descargar los tiles del mapa desde OpenStreetMap</li>
+            <li><strong>POST_NOTIFICATIONS:</strong> Para mostrarte el estado del seguimiento en tiempo real</li>
+            <li><strong>RECEIVE_BOOT_COMPLETED:</strong> Para detectar reinicios del dispositivo</li>
+            <li><strong>WRITE_EXTERNAL_STORAGE</strong> (Android 9 y anteriores): Para el caché de mapas offline</li>
+        </ul>
+        <p>Puedes revocar permisos en <em>Configuración → Aplicaciones → Walk App → Permisos</em>. Revocar ubicación impedirá el funcionamiento del rastreo GPS.</p>
+
+        <h2>6. Notificaciones del Servicio</h2>
+        <p>Walk App muestra una notificación persistente mientras el seguimiento está activo. Esta notificación es obligatoria por Android para servicios de ubicación en primer plano e incluye el estado actual y un botón para detener el seguimiento.</p>
+
+        <h2>7. No Compartimos tus Datos</h2>
+        <p>Walk App <strong>NO comparte, vende, alquila ni transfiere</strong> tus datos personales ni de ubicación a terceros con ningún propósito.</p>
+
+        <h2>8. Menores de Edad</h2>
+        <p>Walk App no está dirigida a menores de 13 años. Si eres padre o tutor y crees que tu hijo ha usado la aplicación, contáctanos para eliminar los datos del dispositivo.</p>
+
+        <h2>9. Tus Derechos sobre tus Datos</h2>
+        <p>Dado que todos los datos se almacenan en tu dispositivo, tienes control total:</p>
+        <ul>
+            <li><strong>Acceso:</strong> Puedes ver todos tus datos directamente en la aplicación</li>
+            <li><strong>Eliminación:</strong> Puedes borrar sesiones individuales o todos los datos desde la app, o desinstalándola</li>
+            <li><strong>Portabilidad:</strong> Los datos están en tu dispositivo y puedes gestionarlos libremente</li>
+        </ul>
+
+        <h2>10. Cambios a Esta Política</h2>
+        <p>Podemos actualizar esta Política de Privacidad ocasionalmente. Te notificaremos de cambios significativos mediante una actualización en Google Play Store. La fecha de vigencia al inicio del documento indica siempre la versión más reciente.</p>
+
+        <div class="contact-section">
+            <h2>📧 Contáctanos</h2>
+            <p>¿Tienes preguntas sobre esta Política de Privacidad o sobre Walk App?</p>
+            <p><a href="mailto:contacto@walkapp.com">contacto@walkapp.com</a></p>
+            <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.85;">Respondemos todas las consultas en un máximo de 48 horas.</p>
+        </div>
+
+        <div class="footer">
+            <p><strong>Walk App</strong> — Registra cada paso, protege tu privacidad.</p>
+            <p style="margin-top: 8px;">© 2026 Walk App. Todos los derechos reservados.</p>
+            <p style="margin-top: 10px; font-size: 0.85em;">📍 Datos de ubicación almacenados localmente · Sin servidores externos · Sin publicidad</p>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════
+         ENGLISH
+    ══════════════════════════════════════════════════ -->
+    <div id="content-en" class="lang-content">
+        <div class="header">
+            <div class="app-icon">🚶</div>
+            <h1>Privacy Policy</h1>
+            <div class="app-name">Walk App</div>
+            <div class="last-updated">Last Updated: March 2026</div>
+        </div>
+
+        <div class="security-badge">
+            📍 GPS TRACKING ACTIVE — YOUR DATA STAYS ONLY ON YOUR DEVICE
+        </div>
+
+        <div class="highlight-box">
+            <strong>📱 Your Privacy Comes First:</strong> Walk App is designed to track your walking routes without compromising your privacy. All your location data, routes and history are stored <strong>exclusively on your device</strong>. We have no servers and do not send your information to any third parties.
+        </div>
+
+        <h2>1. Introduction</h2>
+        <p>Welcome to Walk App. This Privacy Policy explains what information we collect, how we use it, and how we protect it when you use our Android walking tracker app.</p>
+        <p>By using Walk App, you agree to the terms described in this document. If you disagree, please do not use the application.</p>
+
+        <h2>2. Information We Collect</h2>
+
+        <h3>2.1 GPS Location Data</h3>
+        <p>Walk App accesses your location to record your routes. We collect:</p>
+        <ul>
+            <li>GPS coordinates (latitude and longitude) in real time</li>
+            <li>Altitude and movement speed</li>
+            <li>GPS signal accuracy</li>
+            <li>Timestamp for each recorded point</li>
+        </ul>
+        <div class="highlight-box">
+            <strong>📌 Background Location:</strong> The app requests access to your location even when the screen is off or the app is minimized. This is required to record your complete route without interruptions throughout your walk.
+        </div>
+
+        <h3>2.2 Physical Activity Data</h3>
+        <p>During each session we record:</p>
+        <ul>
+            <li>Total distance covered</li>
+            <li>Activity duration</li>
+            <li>Full route (GPS trajectory)</li>
+            <li>History of previous sessions</li>
+        </ul>
+
+        <h3>2.3 Device Data</h3>
+        <ul>
+            <li>Network state (for offline map tile downloads via OSMDroid)</li>
+            <li>GPS state and location provider availability</li>
+            <li>Technical identifiers for the background service</li>
+        </ul>
+
+        <h3>2.4 User Preferences</h3>
+        <p>We store your app settings and active session state locally using Android DataStore.</p>
+
+        <h2>3. How We Use Your Information</h2>
+        <p>We use the data exclusively to:</p>
+        <ul>
+            <li>Record and display your walking routes on the map</li>
+            <li>Calculate distance, speed and activity statistics</li>
+            <li>Save your session history for later review</li>
+            <li>Automatically resume tracking if the system interrupts the service</li>
+            <li>Show you real-time tracking status notifications</li>
+        </ul>
+
+        <h2>4. Data Storage and Security</h2>
+
+        <h3>4.1 100% Local Storage</h3>
+        <p>All your activity data is stored <strong>exclusively on your device</strong> using a local database (Room/SQLite). Walk App has no proprietary servers and does not send your location or activity data to any external server.</p>
+
+        <h3>4.2 Offline Maps (OSMDroid)</h3>
+        <p>Walk App uses OSMDroid to display maps. Map tiles are downloaded from OpenStreetMap servers and cached on your device. This download does not include your personal data or location. See OpenStreetMap's privacy policy at openstreetmap.org/privacy.</p>
+
+        <h3>4.3 Device Security</h3>
+        <p>Since all data is stored locally, we recommend keeping your device protected with a password, PIN or fingerprint.</p>
+
+        <div class="highlight-box">
+            <strong>✅ No servers, no cloud, no third parties:</strong> The only network communication is downloading map tiles from OpenStreetMap, which does not include any of your data.
+        </div>
+
+        <h2>5. Android System Permissions</h2>
+        <p>Walk App requests the following permissions:</p>
+        <ul>
+            <li><strong>ACCESS_FINE_LOCATION / ACCESS_COARSE_LOCATION:</strong> To determine your GPS location accurately during walks</li>
+            <li><strong>ACCESS_BACKGROUND_LOCATION:</strong> To continue recording your route with the screen off or app in background</li>
+            <li><strong>FOREGROUND_SERVICE / FOREGROUND_SERVICE_LOCATION:</strong> To keep the tracking service running with a visible notification</li>
+            <li><strong>WAKE_LOCK:</strong> To prevent the processor from sleeping and losing GPS points</li>
+            <li><strong>INTERNET / ACCESS_NETWORK_STATE:</strong> To download map tiles from OpenStreetMap</li>
+            <li><strong>POST_NOTIFICATIONS:</strong> To show real-time tracking status</li>
+            <li><strong>RECEIVE_BOOT_COMPLETED:</strong> To detect device restarts</li>
+            <li><strong>WRITE_EXTERNAL_STORAGE</strong> (Android 9 and below): For offline map cache</li>
+        </ul>
+        <p>You can revoke permissions at <em>Settings → Apps → Walk App → Permissions</em>. Revoking location access will prevent GPS tracking from working.</p>
+
+        <h2>6. Service Notifications</h2>
+        <p>Walk App displays a persistent notification while tracking is active. This notification is required by Android for foreground location services and includes the current status and a button to stop tracking.</p>
+
+        <h2>7. We Do Not Share Your Data</h2>
+        <p>Walk App does <strong>NOT share, sell, rent or transfer</strong> your personal or location data to any third parties for any purpose.</p>
+
+        <h2>8. Children's Privacy</h2>
+        <p>Walk App is not directed at children under 13. If you are a parent or guardian and believe your child has used the app, contact us to delete the data from the device.</p>
+
+        <h2>9. Your Rights Over Your Data</h2>
+        <p>Since all data is stored on your device, you have full control:</p>
+        <ul>
+            <li><strong>Access:</strong> View all your data directly in the app</li>
+            <li><strong>Deletion:</strong> Delete individual sessions or all data from the app, or by uninstalling it</li>
+            <li><strong>Portability:</strong> Data is on your device and you can manage it freely</li>
+        </ul>
+
+        <h2>10. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. We will notify you of significant changes through a Google Play Store update. The effective date at the top always reflects the latest version.</p>
+
+        <div class="contact-section">
+            <h2>📧 Contact Us</h2>
+            <p>Questions about this Privacy Policy or Walk App?</p>
+            <p><a href="mailto:contact@walkapp.com">contact@walkapp.com</a></p>
+            <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.85;">We aim to respond to all inquiries within 48 hours.</p>
+        </div>
+
+        <div class="footer">
+            <p><strong>Walk App</strong> — Track every step, protect your privacy.</p>
+            <p style="margin-top: 8px;">© 2026 Walk App. All rights reserved.</p>
+            <p style="margin-top: 10px; font-size: 0.85em;">📍 Location data stored locally · No external servers · No ads</p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function changeLanguage(lang) {
+        document.querySelectorAll('.lang-content').forEach(c => c.classList.remove('active'));
+        document.getElementById('content-' + lang).classList.add('active');
+        document.querySelectorAll('.language-selector button').forEach(b => b.classList.remove('active'));
+        document.getElementById('btn-' + lang).classList.add('active');
+    }
+</script>
+
+</body>
+</html>
