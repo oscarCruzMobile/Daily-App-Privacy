@@ -140,6 +140,19 @@
             box-shadow: 0 6px 20px rgba(91, 79, 217, 0.35);
         }
 
+        .encryption-badge {
+            background: linear-gradient(135deg, #1a472a 0%, #2d6a4f 100%);
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            color: #a7f3d0;
+            padding: 16px 22px;
+            border-radius: 12px;
+            margin: 25px 0;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1em;
+            letter-spacing: 0.5px;
+        }
+
         /* ── Contact ── */
         .contact-section {
             background: linear-gradient(135deg, #5B4FD9 0%, #6C5CE7 100%);
@@ -195,103 +208,126 @@
             <div class="app-icon">🚶</div>
             <h1>Política de Privacidad</h1>
             <div class="app-name">Walk App</div>
-            <div class="last-updated">Última actualización: Marzo 2026</div>
+            <div class="last-updated">Última actualización: Mayo 2026</div>
         </div>
 
         <div class="security-badge">
             📍 SEGUIMIENTO GPS ACTIVO — TUS DATOS SE GUARDAN SOLO EN TU DISPOSITIVO
         </div>
 
+        <div class="encryption-badge">
+            🔐 DATOS CIFRADOS — TUS PREFERENCIAS Y RUTAS SE ALMACENAN CON CIFRADO AES VIA ANDROID KEYSTORE
+        </div>
+
         <div class="highlight-box">
-            <strong>📱 Tu Privacidad es lo Primero:</strong> Walk App está diseñada para registrar tus rutas de caminata sin comprometer tu privacidad. Todos tus datos de ubicación, rutas e historial se almacenan <strong>exclusivamente en tu dispositivo</strong>. No contamos con servidores propios ni enviamos tu información a terceros.
+            <strong>📱 Tu Privacidad es lo Primero:</strong> Walk App está diseñada para registrar tus rutas de caminata y ciclismo sin comprometer tu privacidad. Todos tus datos de ubicación, rutas e historial se almacenan <strong>exclusivamente en tu dispositivo</strong>, cifrados con el sistema de seguridad de Android. No contamos con servidores propios ni enviamos tu información a terceros.
         </div>
 
         <h2>1. Introducción</h2>
-        <p>Bienvenido a Walk App. Esta Política de Privacidad explica qué información recopilamos, cómo la utilizamos y cómo la protegemos cuando usas nuestra aplicación de seguimiento de caminata para Android.</p>
+        <p>Bienvenido a Walk App. Esta Política de Privacidad explica qué información recopilamos, cómo la utilizamos y cómo la protegemos cuando usas nuestra aplicación de seguimiento de actividad física (caminata y ciclismo) para Android.</p>
         <p>Al usar Walk App, aceptas los términos descritos en este documento. Si no estás de acuerdo, te pedimos que no uses la aplicación.</p>
 
         <h2>2. Información que Recopilamos</h2>
 
         <h3>2.1 Datos de Ubicación GPS</h3>
-        <p>Walk App accede a tu ubicación para registrar tus rutas. Recopilamos:</p>
+        <p>Walk App accede a tu ubicación a través del <strong>Fused Location Provider de Google Play Services</strong> para registrar tus rutas. Recopilamos:</p>
         <ul>
-            <li>Coordenadas GPS (latitud y longitud) en tiempo real</li>
+            <li>Coordenadas GPS (latitud y longitud) en tiempo real con filtro de precisión máxima de 20 metros</li>
             <li>Altitud y velocidad de desplazamiento</li>
-            <li>Precisión de la señal GPS</li>
-            <li>Marca de tiempo de cada punto registrado</li>
+            <li>Precisión de la señal GPS por punto registrado</li>
+            <li>Marca de tiempo de cada punto</li>
         </ul>
         <div class="highlight-box">
-            <strong>📌 Ubicación en Segundo Plano:</strong> La app solicita acceso a tu ubicación incluso cuando la pantalla está apagada o la app está minimizada. Esto es necesario para registrar tu ruta completa sin interrupciones durante toda la caminata.
+            <strong>📌 Ubicación en Segundo Plano:</strong> La app solicita acceso a tu ubicación incluso cuando la pantalla está apagada o la app está minimizada. Esto es necesario para registrar tu ruta completa sin interrupciones durante toda la actividad. El servicio muestra siempre una notificación persistente y visible mientras está activo.
+        </div>
+        <div class="highlight-box">
+            <strong>🗺️ Google Play Services (Fused Location Provider):</strong> Para obtener una ubicación precisa y eficiente en batería, Walk App utiliza el Fused Location Provider de Google. Este servicio es parte de Google Play Services y puede estar sujeto a la <a href="https://policies.google.com/privacy" style="color:#9d8ffa;">Política de Privacidad de Google</a>. Walk App <strong>no</strong> envía tus datos de ubicación a Google; únicamente utiliza el SDK para leer la posición del dispositivo.
         </div>
 
         <h3>2.2 Datos de Actividad Física</h3>
-        <p>Durante cada sesión registramos:</p>
+        <p>Durante cada sesión de caminata o ciclismo registramos:</p>
         <ul>
-            <li>Distancia total recorrida</li>
+            <li>Distancia total recorrida (calculada con suavizado de señal GPS)</li>
             <li>Duración de la actividad</li>
-            <li>Ruta completa (trayectoria GPS)</li>
+            <li>Ruta completa (trayectoria GPS con filtro de velocidad máxima de 6 m/s para eliminar puntos erróneos)</li>
+            <li>Velocidad promedio</li>
             <li>Historial de sesiones anteriores</li>
         </ul>
 
-        <h3>2.3 Datos del Dispositivo</h3>
+        <h3>2.3 Datos de Conectividad</h3>
         <ul>
-            <li>Estado de la red (para descarga de mapas offline con OSMDroid)</li>
+            <li>Estado de la red (WiFi, datos móviles o Ethernet) — usado para determinar si los mapas pueden descargarse y en el futuro para consultar la API del clima</li>
             <li>Estado del GPS y disponibilidad de proveedores de ubicación</li>
-            <li>Identificadores técnicos para el servicio en segundo plano</li>
+            <li>Estado del SIM (solo para detectar si el dispositivo tiene datos móviles disponibles; Walk App no lee ningún número ni dato del SIM)</li>
         </ul>
 
         <h3>2.4 Preferencias del Usuario</h3>
-        <p>Almacenamos localmente tus configuraciones y el estado de las sesiones activas mediante Android DataStore.</p>
+        <p>Almacenamos localmente tus configuraciones y el estado de las sesiones activas mediante <strong>Android DataStore</strong>. Los valores de tipo texto (como IDs de sesión) se guardan <strong>cifrados con AES a través de Android Keystore</strong> mediante un gestor de cifrado propio de la aplicación.</p>
 
         <h2>3. Cómo Usamos tu Información</h2>
         <p>Utilizamos los datos exclusivamente para:</p>
         <ul>
-            <li>Registrar y mostrar tus rutas de caminata en el mapa</li>
+            <li>Registrar y mostrar tus rutas de caminata y ciclismo en el mapa</li>
             <li>Calcular distancia, velocidad y estadísticas de tus actividades</li>
-            <li>Guardar el historial de sesiones para que puedas consultarlas</li>
-            <li>Reanudar el seguimiento automáticamente si el sistema interrumpe el servicio</li>
+            <li>Guardar el historial de sesiones cifrado para que puedas consultarlo</li>
+            <li>Reanudar o guardar el seguimiento automáticamente si el sistema interrumpe el servicio o la app es cerrada</li>
             <li>Mostrarte notificaciones del estado del seguimiento en tiempo real</li>
+            <li><strong>En el futuro:</strong> Consultar una API de clima para mostrarte condiciones meteorológicas durante tu actividad. Esta funcionalidad usará tu ubicación aproximada solo en el momento de la consulta y no almacenará datos adicionales.</li>
         </ul>
 
         <h2>4. Almacenamiento y Seguridad</h2>
 
-        <h3>4.1 Almacenamiento 100% Local</h3>
-        <p>Todos tus datos de actividad se almacenan <strong>exclusivamente en tu dispositivo</strong> mediante una base de datos local (Room/SQLite). Walk App no cuenta con servidores propios ni envía tus datos de ubicación o actividad física a ningún servidor externo.</p>
+        <h3>4.1 Almacenamiento 100% Local con Cifrado</h3>
+        <p>Todos tus datos de actividad se almacenan <strong>exclusivamente en tu dispositivo</strong> mediante una base de datos local (<strong>Room/SQLite</strong>). Las preferencias y estados de sesión se guardan en <strong>Android DataStore</strong>, con los valores de texto cifrados mediante <strong>AES (Android Keystore)</strong>. Walk App no cuenta con servidores propios ni envía tus datos de ubicación o actividad física a ningún servidor externo.</p>
 
-        <h3>4.2 Mapas Offline (OSMDroid)</h3>
-        <p>Walk App usa OSMDroid para mostrar mapas. Los fragmentos del mapa (tiles) se descargan de los servidores de OpenStreetMap y se almacenan en caché en tu dispositivo. Esta descarga no incluye tus datos personales ni tu ubicación. Consulta la política de privacidad de OpenStreetMap en openstreetmap.org/privacy.</p>
+        <div class="encryption-badge">
+            🔐 Cifrado real: las claves criptográficas se generan y almacenan en el Android Keystore del hardware de tu dispositivo y nunca salen de él.
+        </div>
 
-        <h3>4.3 Seguridad del Dispositivo</h3>
-        <p>Dado que todos los datos se almacenan localmente, recomendamos mantener tu dispositivo protegido con contraseña, PIN o huella dactilar.</p>
+        <h3>4.2 Guardado de Emergencia</h3>
+        <p>Walk App implementa tres capas de protección para que nunca pierdas tus datos: guardado al presionar "Detener", guardado automático si cierras la app desde recientes, y guardado de emergencia si el sistema Android mata el proceso. En todos los casos el guardado ocurre en tu dispositivo.</p>
+
+        <h3>4.3 Mapas Offline (OSMDroid / OpenStreetMap)</h3>
+        <p>Walk App usa <strong>OSMDroid</strong> para mostrar mapas. Los fragmentos del mapa (tiles) se descargan de los servidores de <strong>OpenStreetMap</strong> y se almacenan en caché en tu dispositivo para uso offline. Esta descarga no incluye tus datos personales ni tu ubicación. Consulta la política de privacidad de OpenStreetMap en <a href="https://www.openstreetmap.org/privacy" style="color:#9d8ffa;">openstreetmap.org/privacy</a>.</p>
+
+        <h3>4.4 Seguridad del Dispositivo</h3>
+        <p>Dado que todos los datos se almacenan localmente, recomendamos mantener tu dispositivo protegido con contraseña, PIN o huella dactilar para una capa adicional de seguridad.</p>
 
         <div class="highlight-box">
-            <strong>✅ Sin servidores, sin nube, sin terceros:</strong> La única comunicación de red es la descarga de tiles del mapa desde OpenStreetMap, que no incluye ningún dato tuyo.
+            <strong>✅ Sin servidores, sin nube, sin terceros:</strong> La única comunicación de red es la descarga de tiles del mapa desde OpenStreetMap. Ningún dato tuyo se transmite en esta descarga. En el futuro, la consulta de clima enviará únicamente tu ubicación aproximada al proveedor de clima seleccionado, y se actualizará esta política antes de activar esa función.
         </div>
 
         <h2>5. Permisos del Sistema Android</h2>
         <p>Walk App solicita los siguientes permisos:</p>
         <ul>
-            <li><strong>ACCESS_FINE_LOCATION / ACCESS_COARSE_LOCATION:</strong> Para determinar tu ubicación con precisión GPS durante la caminata</li>
+            <li><strong>ACCESS_FINE_LOCATION / ACCESS_COARSE_LOCATION:</strong> Para determinar tu ubicación con precisión GPS durante la actividad</li>
             <li><strong>ACCESS_BACKGROUND_LOCATION:</strong> Para continuar registrando tu ruta con la pantalla apagada o la app en segundo plano</li>
-            <li><strong>FOREGROUND_SERVICE / FOREGROUND_SERVICE_LOCATION:</strong> Para mantener el servicio de rastreo activo con notificación visible</li>
-            <li><strong>WAKE_LOCK:</strong> Para evitar que el procesador se suspenda y se pierdan puntos GPS</li>
-            <li><strong>INTERNET / ACCESS_NETWORK_STATE:</strong> Para descargar los tiles del mapa desde OpenStreetMap</li>
-            <li><strong>POST_NOTIFICATIONS:</strong> Para mostrarte el estado del seguimiento en tiempo real</li>
-            <li><strong>RECEIVE_BOOT_COMPLETED:</strong> Para detectar reinicios del dispositivo</li>
-            <li><strong>WRITE_EXTERNAL_STORAGE</strong> (Android 9 y anteriores): Para el caché de mapas offline</li>
+            <li><strong>FOREGROUND_SERVICE / FOREGROUND_SERVICE_LOCATION:</strong> Para mantener el servicio de rastreo activo con notificación visible obligatoria</li>
+            <li><strong>WAKE_LOCK:</strong> Para evitar que el procesador se suspenda y se pierdan puntos GPS durante la actividad</li>
+            <li><strong>INTERNET / ACCESS_NETWORK_STATE:</strong> Para descargar los tiles del mapa desde OpenStreetMap y, en el futuro, consultar la API del clima</li>
+            <li><strong>POST_NOTIFICATIONS:</strong> Para mostrarte el estado del seguimiento en tiempo real mediante una notificación persistente</li>
+            <li><strong>RECEIVE_BOOT_COMPLETED:</strong> Para detectar reinicios del dispositivo y limpiar el estado de sesión si el dispositivo se apagó con un rastreo activo</li>
+            <li><strong>WRITE_EXTERNAL_STORAGE</strong> (Android 9 y anteriores): Para el caché de mapas offline de OSMDroid</li>
         </ul>
-        <p>Puedes revocar permisos en <em>Configuración → Aplicaciones → Walk App → Permisos</em>. Revocar ubicación impedirá el funcionamiento del rastreo GPS.</p>
+        <p>Puedes revocar permisos en <em>Configuración → Aplicaciones → Walk App → Permisos</em>. Revocar el permiso de ubicación impedirá el funcionamiento del rastreo GPS.</p>
 
         <h2>6. Notificaciones del Servicio</h2>
-        <p>Walk App muestra una notificación persistente mientras el seguimiento está activo. Esta notificación es obligatoria por Android para servicios de ubicación en primer plano e incluye el estado actual y un botón para detener el seguimiento.</p>
+        <p>Walk App muestra una notificación persistente mientras el seguimiento está activo. Esta notificación es obligatoria por Android para servicios de ubicación en primer plano e incluye el tiempo transcurrido, distancia recorrida y un botón para detener el seguimiento inmediatamente.</p>
 
         <h2>7. No Compartimos tus Datos</h2>
-        <p>Walk App <strong>NO comparte, vende, alquila ni transfiere</strong> tus datos personales ni de ubicación a terceros con ningún propósito.</p>
+        <p>Walk App <strong>NO comparte, vende, alquila ni transfiere</strong> tus datos personales ni de ubicación a terceros con ningún propósito. La única excepción futura es la API del clima (cuando se implemente), que recibirá únicamente tu ubicación aproximada para devolver información meteorológica, y se actualizará esta política en ese momento.</p>
 
-        <h2>8. Menores de Edad</h2>
+        <h2>8. Servicios de Terceros</h2>
+        <p>Walk App utiliza los siguientes servicios de terceros con implicaciones de privacidad mínimas:</p>
+        <ul>
+            <li><strong>Google Play Services (Fused Location Provider):</strong> SDK local para obtener la ubicación del dispositivo. No se envían tus datos de ubicación a Google a través de Walk App. Política de privacidad de Google: <a href="https://policies.google.com/privacy" style="color:#9d8ffa;">policies.google.com/privacy</a></li>
+            <li><strong>OpenStreetMap / OSMDroid:</strong> Descarga de tiles del mapa. No se incluyen datos personales en estas solicitudes. Política: <a href="https://www.openstreetmap.org/privacy" style="color:#9d8ffa;">openstreetmap.org/privacy</a></li>
+        </ul>
+
+        <h2>9. Menores de Edad</h2>
         <p>Walk App no está dirigida a menores de 13 años. Si eres padre o tutor y crees que tu hijo ha usado la aplicación, contáctanos para eliminar los datos del dispositivo.</p>
 
-        <h2>9. Tus Derechos sobre tus Datos</h2>
+        <h2>10. Tus Derechos sobre tus Datos</h2>
         <p>Dado que todos los datos se almacenan en tu dispositivo, tienes control total:</p>
         <ul>
             <li><strong>Acceso:</strong> Puedes ver todos tus datos directamente en la aplicación</li>
@@ -299,20 +335,23 @@
             <li><strong>Portabilidad:</strong> Los datos están en tu dispositivo y puedes gestionarlos libremente</li>
         </ul>
 
-        <h2>10. Cambios a Esta Política</h2>
-        <p>Podemos actualizar esta Política de Privacidad ocasionalmente. Te notificaremos de cambios significativos mediante una actualización en Google Play Store. La fecha de vigencia al inicio del documento indica siempre la versión más reciente.</p>
+        <h2>11. Cambios a Esta Política</h2>
+        <p>Podemos actualizar esta Política de Privacidad ocasionalmente, especialmente cuando se implemente la funcionalidad de API del clima. Te notificaremos de cambios significativos mediante una actualización en Google Play Store. La fecha de vigencia al inicio del documento indica siempre la versión más reciente.</p>
 
         <div class="contact-section">
             <h2>📧 Contáctanos</h2>
             <p>¿Tienes preguntas sobre esta Política de Privacidad o sobre Walk App?</p>
-            <p><a href="mailto:contacto@walkapp.com">contacto@walkapp.com</a></p>
+            <p><a href="mailto:mobiledevoscar@gmail.com">mobiledevoscar@gmail.com</a></p>
             <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.85;">Respondemos todas las consultas en un máximo de 48 horas.</p>
         </div>
 
         <div class="footer">
             <p><strong>Walk App</strong> — Registra cada paso, protege tu privacidad.</p>
             <p style="margin-top: 8px;">© 2026 Walk App. Todos los derechos reservados.</p>
-            <p style="margin-top: 10px; font-size: 0.85em;">📍 Datos de ubicación almacenados localmente · Sin servidores externos · Sin publicidad</p>
+            <p style="margin-top: 10px; font-size: 0.85em;">📍 Datos de ubicación almacenados localmente · Cifrado AES/Android Keystore · Sin servidores externos · Sin publicidad</p>
+            <p style="margin-top: 10px; font-size: 0.80em; color: #504f6a;">
+                Diseño de interfaz basado en <a href="https://www.figma.com/community/file/1155933170037936315/run-earn" target="_blank">"Run &amp; Earn" de Figma Community</a> (recurso gratuito de la comunidad de Figma, usado bajo los términos de uso de Figma Community).
+            </p>
         </div>
     </div>
 
@@ -324,103 +363,126 @@
             <div class="app-icon">🚶</div>
             <h1>Privacy Policy</h1>
             <div class="app-name">Walk App</div>
-            <div class="last-updated">Last Updated: March 2026</div>
+            <div class="last-updated">Last Updated: May 2026</div>
         </div>
 
         <div class="security-badge">
             📍 GPS TRACKING ACTIVE — YOUR DATA STAYS ONLY ON YOUR DEVICE
         </div>
 
+        <div class="encryption-badge">
+            🔐 ENCRYPTED DATA — YOUR PREFERENCES AND ROUTES ARE STORED WITH AES ENCRYPTION VIA ANDROID KEYSTORE
+        </div>
+
         <div class="highlight-box">
-            <strong>📱 Your Privacy Comes First:</strong> Walk App is designed to track your walking routes without compromising your privacy. All your location data, routes and history are stored <strong>exclusively on your device</strong>. We have no servers and do not send your information to any third parties.
+            <strong>📱 Your Privacy Comes First:</strong> Walk App is designed to track your walking and cycling routes without compromising your privacy. All your location data, routes and history are stored <strong>exclusively on your device</strong>, encrypted with Android's security system. We have no servers and do not send your information to any third parties.
         </div>
 
         <h2>1. Introduction</h2>
-        <p>Welcome to Walk App. This Privacy Policy explains what information we collect, how we use it, and how we protect it when you use our Android walking tracker app.</p>
+        <p>Welcome to Walk App. This Privacy Policy explains what information we collect, how we use it, and how we protect it when you use our Android physical activity tracking app (walking and cycling).</p>
         <p>By using Walk App, you agree to the terms described in this document. If you disagree, please do not use the application.</p>
 
         <h2>2. Information We Collect</h2>
 
         <h3>2.1 GPS Location Data</h3>
-        <p>Walk App accesses your location to record your routes. We collect:</p>
+        <p>Walk App accesses your location through <strong>Google Play Services' Fused Location Provider</strong> to record your routes. We collect:</p>
         <ul>
-            <li>GPS coordinates (latitude and longitude) in real time</li>
+            <li>GPS coordinates (latitude and longitude) in real time, filtered to a maximum accuracy of 20 meters</li>
             <li>Altitude and movement speed</li>
-            <li>GPS signal accuracy</li>
+            <li>GPS signal accuracy per recorded point</li>
             <li>Timestamp for each recorded point</li>
         </ul>
         <div class="highlight-box">
-            <strong>📌 Background Location:</strong> The app requests access to your location even when the screen is off or the app is minimized. This is required to record your complete route without interruptions throughout your walk.
+            <strong>📌 Background Location:</strong> The app requests access to your location even when the screen is off or the app is minimized. This is required to record your complete route without interruptions throughout your activity. The service always displays a persistent, visible notification while active.
+        </div>
+        <div class="highlight-box">
+            <strong>🗺️ Google Play Services (Fused Location Provider):</strong> To obtain accurate and battery-efficient location, Walk App uses Google's Fused Location Provider. This service is part of Google Play Services and may be subject to <a href="https://policies.google.com/privacy" style="color:#9d8ffa;">Google's Privacy Policy</a>. Walk App does <strong>not</strong> send your location data to Google; it only uses the SDK to read the device's position.
         </div>
 
         <h3>2.2 Physical Activity Data</h3>
-        <p>During each session we record:</p>
+        <p>During each walking or cycling session we record:</p>
         <ul>
-            <li>Total distance covered</li>
+            <li>Total distance covered (calculated with GPS signal smoothing)</li>
             <li>Activity duration</li>
-            <li>Full route (GPS trajectory)</li>
+            <li>Full route (GPS trajectory with a maximum speed filter of 6 m/s to eliminate erroneous points)</li>
+            <li>Average speed</li>
             <li>History of previous sessions</li>
         </ul>
 
-        <h3>2.3 Device Data</h3>
+        <h3>2.3 Connectivity Data</h3>
         <ul>
-            <li>Network state (for offline map tile downloads via OSMDroid)</li>
+            <li>Network state (WiFi, mobile data, or Ethernet) — used to determine whether maps can be downloaded and, in the future, to query the weather API</li>
             <li>GPS state and location provider availability</li>
-            <li>Technical identifiers for the background service</li>
+            <li>SIM state (only to detect whether the device has mobile data available; Walk App does not read any SIM number or personal SIM data)</li>
         </ul>
 
         <h3>2.4 User Preferences</h3>
-        <p>We store your app settings and active session state locally using Android DataStore.</p>
+        <p>We store your app settings and active session state locally using <strong>Android DataStore</strong>. Text values (such as session IDs) are stored <strong>encrypted with AES via Android Keystore</strong> through the app's own encryption manager.</p>
 
         <h2>3. How We Use Your Information</h2>
         <p>We use the data exclusively to:</p>
         <ul>
-            <li>Record and display your walking routes on the map</li>
+            <li>Record and display your walking and cycling routes on the map</li>
             <li>Calculate distance, speed and activity statistics</li>
-            <li>Save your session history for later review</li>
-            <li>Automatically resume tracking if the system interrupts the service</li>
+            <li>Save your encrypted session history for later review</li>
+            <li>Automatically resume or save tracking if the system interrupts the service or the app is closed</li>
             <li>Show you real-time tracking status notifications</li>
+            <li><strong>In the future:</strong> Query a weather API to display meteorological conditions during your activity. This feature will only send your approximate location to the selected weather provider at the time of the request and will not store additional data. This policy will be updated before that feature is activated.</li>
         </ul>
 
         <h2>4. Data Storage and Security</h2>
 
-        <h3>4.1 100% Local Storage</h3>
-        <p>All your activity data is stored <strong>exclusively on your device</strong> using a local database (Room/SQLite). Walk App has no proprietary servers and does not send your location or activity data to any external server.</p>
+        <h3>4.1 100% Local Storage with Encryption</h3>
+        <p>All your activity data is stored <strong>exclusively on your device</strong> using a local database (<strong>Room/SQLite</strong>). Preferences and session states are saved in <strong>Android DataStore</strong>, with text values encrypted using <strong>AES (Android Keystore)</strong>. Walk App has no proprietary servers and does not send your location or activity data to any external server.</p>
 
-        <h3>4.2 Offline Maps (OSMDroid)</h3>
-        <p>Walk App uses OSMDroid to display maps. Map tiles are downloaded from OpenStreetMap servers and cached on your device. This download does not include your personal data or location. See OpenStreetMap's privacy policy at openstreetmap.org/privacy.</p>
+        <div class="encryption-badge">
+            🔐 Real encryption: cryptographic keys are generated and stored in your device's hardware Android Keystore and never leave it.
+        </div>
 
-        <h3>4.3 Device Security</h3>
-        <p>Since all data is stored locally, we recommend keeping your device protected with a password, PIN or fingerprint.</p>
+        <h3>4.2 Emergency Save</h3>
+        <p>Walk App implements three layers of protection so you never lose your data: save on pressing "Stop", automatic save if you close the app from recents, and emergency save if the Android system kills the process. In all cases the save happens on your device.</p>
+
+        <h3>4.3 Offline Maps (OSMDroid / OpenStreetMap)</h3>
+        <p>Walk App uses <strong>OSMDroid</strong> to display maps. Map tiles are downloaded from <strong>OpenStreetMap</strong> servers and cached on your device for offline use. This download does not include your personal data or location. See OpenStreetMap's privacy policy at <a href="https://www.openstreetmap.org/privacy" style="color:#9d8ffa;">openstreetmap.org/privacy</a>.</p>
+
+        <h3>4.4 Device Security</h3>
+        <p>Since all data is stored locally, we recommend keeping your device protected with a password, PIN or fingerprint for an additional layer of security.</p>
 
         <div class="highlight-box">
-            <strong>✅ No servers, no cloud, no third parties:</strong> The only network communication is downloading map tiles from OpenStreetMap, which does not include any of your data.
+            <strong>✅ No servers, no cloud, no third parties:</strong> The only network communication is downloading map tiles from OpenStreetMap. None of your data is transmitted in this download. In the future, the weather query will only send your approximate location to the selected weather provider, and this policy will be updated at that time.
         </div>
 
         <h2>5. Android System Permissions</h2>
         <p>Walk App requests the following permissions:</p>
         <ul>
-            <li><strong>ACCESS_FINE_LOCATION / ACCESS_COARSE_LOCATION:</strong> To determine your GPS location accurately during walks</li>
+            <li><strong>ACCESS_FINE_LOCATION / ACCESS_COARSE_LOCATION:</strong> To determine your GPS location accurately during activity</li>
             <li><strong>ACCESS_BACKGROUND_LOCATION:</strong> To continue recording your route with the screen off or app in background</li>
-            <li><strong>FOREGROUND_SERVICE / FOREGROUND_SERVICE_LOCATION:</strong> To keep the tracking service running with a visible notification</li>
-            <li><strong>WAKE_LOCK:</strong> To prevent the processor from sleeping and losing GPS points</li>
-            <li><strong>INTERNET / ACCESS_NETWORK_STATE:</strong> To download map tiles from OpenStreetMap</li>
-            <li><strong>POST_NOTIFICATIONS:</strong> To show real-time tracking status</li>
-            <li><strong>RECEIVE_BOOT_COMPLETED:</strong> To detect device restarts</li>
-            <li><strong>WRITE_EXTERNAL_STORAGE</strong> (Android 9 and below): For offline map cache</li>
+            <li><strong>FOREGROUND_SERVICE / FOREGROUND_SERVICE_LOCATION:</strong> To keep the tracking service running with a mandatory visible notification</li>
+            <li><strong>WAKE_LOCK:</strong> To prevent the processor from sleeping and losing GPS points during activity</li>
+            <li><strong>INTERNET / ACCESS_NETWORK_STATE:</strong> To download map tiles from OpenStreetMap and, in the future, query the weather API</li>
+            <li><strong>POST_NOTIFICATIONS:</strong> To show real-time tracking status via a persistent notification</li>
+            <li><strong>RECEIVE_BOOT_COMPLETED:</strong> To detect device restarts and clean up session state if the device was shut down with an active tracking session</li>
+            <li><strong>WRITE_EXTERNAL_STORAGE</strong> (Android 9 and below): For OSMDroid offline map cache</li>
         </ul>
         <p>You can revoke permissions at <em>Settings → Apps → Walk App → Permissions</em>. Revoking location access will prevent GPS tracking from working.</p>
 
         <h2>6. Service Notifications</h2>
-        <p>Walk App displays a persistent notification while tracking is active. This notification is required by Android for foreground location services and includes the current status and a button to stop tracking.</p>
+        <p>Walk App displays a persistent notification while tracking is active. This notification is required by Android for foreground location services and includes elapsed time, distance covered, and a button to stop tracking immediately.</p>
 
         <h2>7. We Do Not Share Your Data</h2>
-        <p>Walk App does <strong>NOT share, sell, rent or transfer</strong> your personal or location data to any third parties for any purpose.</p>
+        <p>Walk App does <strong>NOT share, sell, rent or transfer</strong> your personal or location data to any third parties for any purpose. The only future exception is the weather API (when implemented), which will only receive your approximate location to return meteorological information, and this policy will be updated at that time.</p>
 
-        <h2>8. Children's Privacy</h2>
+        <h2>8. Third-Party Services</h2>
+        <p>Walk App uses the following third-party services with minimal privacy implications:</p>
+        <ul>
+            <li><strong>Google Play Services (Fused Location Provider):</strong> Local SDK to obtain device location. Your location data is not sent to Google through Walk App. Google's privacy policy: <a href="https://policies.google.com/privacy" style="color:#9d8ffa;">policies.google.com/privacy</a></li>
+            <li><strong>OpenStreetMap / OSMDroid:</strong> Map tile downloads. No personal data is included in these requests. Policy: <a href="https://www.openstreetmap.org/privacy" style="color:#9d8ffa;">openstreetmap.org/privacy</a></li>
+        </ul>
+
+        <h2>9. Children's Privacy</h2>
         <p>Walk App is not directed at children under 13. If you are a parent or guardian and believe your child has used the app, contact us to delete the data from the device.</p>
 
-        <h2>9. Your Rights Over Your Data</h2>
+        <h2>10. Your Rights Over Your Data</h2>
         <p>Since all data is stored on your device, you have full control:</p>
         <ul>
             <li><strong>Access:</strong> View all your data directly in the app</li>
@@ -428,20 +490,23 @@
             <li><strong>Portability:</strong> Data is on your device and you can manage it freely</li>
         </ul>
 
-        <h2>10. Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. We will notify you of significant changes through a Google Play Store update. The effective date at the top always reflects the latest version.</p>
+        <h2>11. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time, especially when the weather API feature is implemented. We will notify you of significant changes through a Google Play Store update. The effective date at the top always reflects the latest version.</p>
 
         <div class="contact-section">
             <h2>📧 Contact Us</h2>
             <p>Questions about this Privacy Policy or Walk App?</p>
-            <p><a href="mailto:contact@walkapp.com">contact@walkapp.com</a></p>
+            <p><a href="mailto:mobiledevoscar@gmail.com">mobiledevoscar@gmail.com</a></p>
             <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.85;">We aim to respond to all inquiries within 48 hours.</p>
         </div>
 
         <div class="footer">
             <p><strong>Walk App</strong> — Track every step, protect your privacy.</p>
             <p style="margin-top: 8px;">© 2026 Walk App. All rights reserved.</p>
-            <p style="margin-top: 10px; font-size: 0.85em;">📍 Location data stored locally · No external servers · No ads</p>
+            <p style="margin-top: 10px; font-size: 0.85em;">📍 Location data stored locally · AES/Android Keystore encryption · No external servers · No ads</p>
+            <p style="margin-top: 10px; font-size: 0.80em; color: #504f6a;">
+                UI design based on <a href="https://www.figma.com/community/file/1155933170037936315/run-earn" target="_blank">"Run &amp; Earn" from Figma Community</a> (free community resource, used under Figma Community terms of service).
+            </p>
         </div>
     </div>
 
